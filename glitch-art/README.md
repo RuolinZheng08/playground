@@ -18,32 +18,34 @@ If there is a single image file named `img.jpg`, run `./glitch_art.py -f img.jpg
 
 Left: the original image, right: the glitched image.
 
+
 ### Pixel Sorting
 
 `./glitch_art.py -f img.jpg -m sort`
 
 <span>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/1.jpg" style="width: 350px;"/>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_1.jpg" style="width: 350px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/1.jpg" style="width: 250px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_1.jpg" style="width: 250px;"/>
 </span>
 
 <span>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/2.jpg" style="width: 350px;"/>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_2.jpg" style="width: 350px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/2.jpg" style="width: 250px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_2.jpg" style="width: 250px;"/>
 </span>
+
 
 ### Chromatic Aberration
 
 `./glitch_art.py -f img.jpg -m chromatic`
 
 <span>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/3.jpg" style="width: 350px;"/>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_3.jpg" style="width: 350px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/3.jpg" style="width: 250px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_3.jpg" style="width: 250px;"/>
 </span>
 
 <span>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/4.jpg" style="width: 350px;"/>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_4.jpg" style="width: 350px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/4.jpeg" style="width: 250px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_4.jpeg" style="width: 250px;"/>
 </span>
 
 
@@ -52,14 +54,16 @@ Left: the original image, right: the glitched image.
 `./glitch_art.py -f img.jpg -m both`
 
 <span>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/5.jpg" style="width: 350px;"/>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_5.jpg" style="width: 350px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/5.jpeg" style="width: 250px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_5.jpeg" style="width: 250px;"/>
 </span>
 
 <span>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/6.jpg" style="width: 350px;"/>
-  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_6.jpg" style="width: 350px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/6.jpeg" style="width: 250px;"/>
+  <img src="https://ruolinzheng08.github.io/images/glitch-art/glitched_6.jpeg" style="width: 250px;"/>
 </span>
+
+
 ## Notes
 
 Sometimes, due to image dimension bugs, the program will skip certain files. Please change the height of the image to be a more regular number (such as 400, 800, etc.) and try running the program again.
