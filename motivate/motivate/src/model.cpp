@@ -7,3 +7,11 @@
 //
 
 #include "model.h"
+
+wxIMPLEMENT_APP(MyApp);
+
+bool MyApp::OnInit() {
+    wxFrame *frame = new wxFrame(NULL, wxID_OK, _T("motivate"));
+    frame->Show(true);
+    return true;
+}

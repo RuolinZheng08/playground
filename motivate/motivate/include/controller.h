@@ -10,5 +10,6 @@
 #define controller_h
 
 #include "model.h"
+#include "view.h"
 
 #endif /* controller_h */

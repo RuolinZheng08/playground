@@ -11,5 +11,13 @@
 
 #include <vector>
 #include <map>
+#include <wx/wx.h>
+
+class MyApp: public wxApp {
+public:
+    virtual bool OnInit();
+};
+
+wxDECLARE_APP(MyApp);
 
 #endif /* model_h */
