@@ -12,4 +12,12 @@
 #include "model.h"
 #include "view.h"
 
+class MyApp: public wxApp {
+public:
+    virtual bool OnInit();
+private:
+    MyModel *model;
+    MyView *view;
+};
+
 #endif /* controller_h */

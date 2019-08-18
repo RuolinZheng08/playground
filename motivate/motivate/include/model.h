@@ -9,15 +9,28 @@
 #ifndef model_h
 #define model_h
 
+#include <string>
 #include <vector>
 #include <map>
 #include <wx/wx.h>
 
-class MyApp: public wxApp {
+class ListItem {
 public:
-    virtual bool OnInit();
+    std::string name;
+    std::string description;
+    int num;  // number of tokens
+    
+    ListItem(std::string name, std::string description, int num);
 };
 
-wxDECLARE_APP(MyApp);
+class MyModel {
+public:
+    // maps date to recordList
+    std::map<std::string, std::vector<ListItem *>> recordMap;
+    std::vector<ListItem *> achievements;
+    std::vector<ListItem *> wishes;
+    
+    MyModel();
+};
 
 #endif /* model_h */

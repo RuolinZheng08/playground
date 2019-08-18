@@ -8,10 +8,18 @@
 
 #include "model.h"
 
-wxIMPLEMENT_APP(MyApp);
+ListItem::ListItem(std::string name, std::string description, int num) {
+    name = name;
+    description = description;
+    num = num;
+}
 
-bool MyApp::OnInit() {
-    wxFrame *frame = new wxFrame(NULL, wxID_OK, _T("motivate"));
-    frame->Show(true);
-    return true;
+MyModel::MyModel() {
+    // FIXME
+    time_t seconds = 1262304000;
+    struct tm *tm = localtime(&seconds);
+    char date[20];
+    strftime(date, sizeof(date), "%Y-%m-%d", tm);
+    ListItem *record = new ListItem("LeetCode", "Q10", 2);
+    recordMap[std::string(date)].push_back(record);
 }

@@ -7,3 +7,15 @@
 //
 
 #include "controller.h"
+
+wxIMPLEMENT_APP(MyApp);
+
+bool MyApp::OnInit() {
+    // model
+    model = new MyModel();
+    
+    // view
+    view = new MyView();
+    view->frame->Show(true);
+    return true;
+}

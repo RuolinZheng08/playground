@@ -10,5 +10,18 @@
 #define view_h
 
 #include <wx/wx.h>
+#include <wx/notebook.h>
+
+class NotebookFrame: public wxFrame {
+public:
+    NotebookFrame(const wxString &title);
+};
+
+class MyView {
+public:
+    NotebookFrame *frame;
+    
+    MyView();
+};
 
 #endif /* view_h */
