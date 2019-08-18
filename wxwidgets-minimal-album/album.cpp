@@ -9,9 +9,25 @@ inline int mod(int a, int b) { return (a % b + b) % b; }
 bool MyApp::OnInit() {
     wxInitAllImageHandlers();
     // load images
-    wxImage img(_T("images/1.jpg"), wxBITMAP_TYPE_JPEG);
-    wxBitmap bmp(img);
-    this->images.push_back(bmp);
+    DIR *dir;
+    struct dirent *entry;
+    dir = opendir("images/");
+
+    if (dir != NULL) {
+        while ((entry = readdir(dir)) != NULL) {
+            string fname(entry->d_name);
+            if (fname.find(".jpg") != string::npos || fname.find(".jpeg") != string::npos) {
+                try {
+                    wxImage img(wxString::Format(_T("images/%s"), fname), wxBITMAP_TYPE_JPEG);
+                    wxBitmap bmp(img);
+                    this->images.push_back(bmp);
+                } catch (int e) {
+
+                }
+            }
+        }
+    }
+    closedir(dir);
 
     AlbumFrame *album = new AlbumFrame();
     album->Show();
@@ -19,13 +35,13 @@ bool MyApp::OnInit() {
 }
 
 // methods for AlbumFrame
-AlbumFrame::AlbumFrame() : wxFrame(NULL, wxID_ANY, _T("Album")) {
+AlbumFrame::AlbumFrame() : wxFrame(NULL, wxID_ANY, _T("Album"), wxDefaultPosition, wxSize(1000, 600)) {
     wxGridSizer *grid = new wxGridSizer(4, 5, 5);
     this->SetSizer(grid);
 
     vector<wxBitmap> images = wxGetApp().images;
     for (int i = 0; i < images.size(); i++) {
-        wxBitmapButton *btn = new wxBitmapButton(this, id_offset + i, images[i]);
+        wxBitmapButton *btn = new wxBitmapButton(this, id_offset + i, images[i], wxDefaultPosition, wxSize(100, 100));
         btn->Bind(wxEVT_BUTTON, &AlbumFrame::OnImgBtn, this);
         grid->Add(btn, 0, wxALL | wxALIGN_CENTER);
         this->thumbnails[i] = btn;
@@ -39,7 +55,7 @@ void AlbumFrame::OnImgBtn(wxCommandEvent &event) {
 }
 
 // methods for ImageFrame
-ImageFrame::ImageFrame(int id) : wxFrame(NULL, wxID_ANY, wxString::Format(_T("Image %i"), id)) {
+ImageFrame::ImageFrame(int id) : wxFrame(NULL, wxID_ANY, wxString::Format(_T("Image %i"), id), wxDefaultPosition, wxSize(1000, 600)) {
     this->currId = id;  // record the button id
 
     wxBoxSizer *navbar = new wxBoxSizer(wxHORIZONTAL);

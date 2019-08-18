@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <dirent.h>
 #include <wx/wx.h>
 
 using namespace std;
