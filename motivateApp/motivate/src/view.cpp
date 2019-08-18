@@ -34,7 +34,6 @@ void MyScrolledPane::drawRecordMap(std::map<std::string, std::vector<Record>> re
         }
         paneSizer->Add(tokenSizer);
     }
-    paneSizer->Fit(this);
 }
 
 void MyScrolledPane::drawRecordList(std::vector<Record> recordList) {

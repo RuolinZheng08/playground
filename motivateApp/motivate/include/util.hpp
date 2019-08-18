@@ -15,6 +15,8 @@
 #include <vector>
 #include <map>
 
+std::string timeToDate(time_t seconds);
+
 class Record {
 public:
     std::string name;
