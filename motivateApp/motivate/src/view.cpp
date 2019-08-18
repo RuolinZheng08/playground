@@ -14,26 +14,34 @@ MyView::MyView() {
 
 MyScrolledPane::MyScrolledPane(wxWindow *parent, wxWindowID id): wxScrolledWindow(parent, id) {
     paneSizer = new wxBoxSizer(wxVERTICAL);
-    SetSizerAndFit(paneSizer);
+    SetSizer(paneSizer);
     FitInside();
     SetScrollRate(5, 5);
-}
-
-void MyScrolledPane::drawRecordList(std::vector<Record> recordList) {
-    for (int i = 0; i < recordList.size(); i++) {
-        wxButton* b = new wxButton(this, wxID_ANY, recordList[i].name);
-        paneSizer->Add(b, 0, wxALL, 3);
-    }
 }
 
 void MyScrolledPane::drawRecordMap(std::map<std::string, std::vector<Record>> recordMap) {
     std::map<std::string, std::vector<Record>>::iterator it;
     for (it = recordMap.begin(); it != recordMap.end(); it++) {
-        std::string date = it->first;
+        wxStaticText *date = new wxStaticText(this, wxID_ANY, wxString(it->first));
+        paneSizer->Add(date, 0, wxTOP | wxBOTTOM, HISTORY_DATE_SPACING);
+        
+        // draw tokens
+        wxWrapSizer *tokenSizer = new wxWrapSizer(wxHORIZONTAL);
         std::vector<Record> recordList = it->second;
-        wxStaticText *text = new wxStaticText(this, wxID_ANY, wxString(date));
-        paneSizer->Add(text, 0, wxALL, 3);
-        drawRecordList(recordList);
+        for (int i = 0; i < recordList.size(); i++) {
+            wxStaticText *token = new wxStaticText(this, wxID_ANY, TOKEN);
+            tokenSizer->Add(token, 0, wxRIGHT, HISTORY_BASIC_SPACING);
+        }
+        paneSizer->Add(tokenSizer);
+    }
+    paneSizer->Fit(this);
+}
+
+void MyScrolledPane::drawRecordList(std::vector<Record> recordList) {
+    for (int i = 0; i < recordList.size(); i++) {
+        Record record = recordList[i];
+        wxStaticText *txt = new wxStaticText(this, wxID_ANY, wxString::Format(("%s %s %d"), record.name, record.description, record.num));
+        paneSizer->Add(txt, 0, wxALL, HISTORY_BASIC_SPACING);
     }
 }
 
@@ -49,6 +57,6 @@ MyNotebookFrame::MyNotebookFrame(const wxString &title): wxFrame(NULL, wxID_ANY,
     
     wxBoxSizer *sizer = new wxBoxSizer(wxHORIZONTAL);
     sizer->Add(notebook, 1, wxEXPAND);
-    sizer->SetMinSize(350, 350);
+    sizer->SetMinSize(WINDOW_WIDTH, WINDOW_HEIGHT);
     SetSizerAndFit(sizer);
 }

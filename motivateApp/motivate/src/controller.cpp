@@ -18,6 +18,8 @@ bool MyApp::OnInit() {
     view = new MyView();
     
     view->frame->historyTab->drawRecordMap(model->recordMap);
+    view->frame->achieveTab->drawRecordList(model->achievements);
+    view->frame->wishTab->drawRecordList(model->wishes);
     view->frame->Show(true);
     return true;
 }
