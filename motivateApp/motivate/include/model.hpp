@@ -13,22 +13,14 @@
 #include <vector>
 #include <map>
 #include <wx/wx.h>
-
-class ListItem {
-public:
-    std::string name;
-    std::string description;
-    int num;  // number of tokens
-    
-    ListItem(std::string name, std::string description, int num);
-};
+#include "util.hpp"
 
 class MyModel {
 public:
     // maps date to recordList
-    std::map<std::string, std::vector<ListItem *>> recordMap;
-    std::vector<ListItem *> achievements;
-    std::vector<ListItem *> wishes;
+    std::map<std::string, std::vector<Record>> recordMap;
+    std::vector<Record> achievements;
+    std::vector<Record> wishes;
     
     MyModel();
 };

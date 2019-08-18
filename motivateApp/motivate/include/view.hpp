@@ -12,14 +12,23 @@
 #include <vector>
 #include <wx/wx.h>
 #include <wx/notebook.h>
+#include "util.hpp"
 
 class MyScrolledPane: public wxScrolledWindow {
 public:
+    wxBoxSizer *paneSizer;
+    
     MyScrolledPane(wxWindow *parent, wxWindowID id);
+    void drawRecordList(std::vector<Record> recordList);
+    void drawRecordMap(std::map<std::string, std::vector<Record>> recordMap);
 };
 
 class MyNotebookFrame: public wxFrame {
 public:
+    MyScrolledPane *historyTab;
+    MyScrolledPane *achieveTab;
+    MyScrolledPane *wishTab;
+    
     MyNotebookFrame(const wxString &title);
 };
 

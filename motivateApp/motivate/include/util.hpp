@@ -10,5 +10,18 @@
 #define util_hpp
 
 #include <stdio.h>
+#include <wx/wx.h>
+#include <string>
+#include <vector>
+#include <map>
+
+class Record {
+public:
+    std::string name;
+    std::string description;
+    int num;  // number of tokens
+    
+    Record(std::string &name, std::string &description, int num);
+};
 
 #endif /* util_hpp */

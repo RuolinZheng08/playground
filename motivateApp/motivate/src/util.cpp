@@ -7,3 +7,9 @@
 //
 
 #include "util.hpp"
+
+Record::Record(std::string &name, std::string &description, int num) {
+    this->name = name;
+    this->description = description;
+    this->num = num;
+}

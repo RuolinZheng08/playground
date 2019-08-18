@@ -16,6 +16,8 @@ bool MyApp::OnInit() {
     
     // view
     view = new MyView();
+    
+    view->frame->historyTab->drawRecordMap(model->recordMap);
     view->frame->Show(true);
     return true;
 }
