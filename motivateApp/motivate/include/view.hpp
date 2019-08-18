@@ -9,17 +9,23 @@
 #ifndef view_h
 #define view_h
 
+#include <vector>
 #include <wx/wx.h>
 #include <wx/notebook.h>
 
-class NotebookFrame: public wxFrame {
+class MyScrolledPane: public wxScrolledWindow {
 public:
-    NotebookFrame(const wxString &title);
+    MyScrolledPane(wxWindow *parent, wxWindowID id);
+};
+
+class MyNotebookFrame: public wxFrame {
+public:
+    MyNotebookFrame(const wxString &title);
 };
 
 class MyView {
 public:
-    NotebookFrame *frame;
+    MyNotebookFrame *frame;
     
     MyView();
 };

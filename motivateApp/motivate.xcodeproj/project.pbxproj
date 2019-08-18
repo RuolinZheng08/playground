@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77083BF3230980A40061F749 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77083BF1230980A40061F749 /* util.cpp */; };
 		77291085230954ED002AA58E /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77291084230954ED002AA58E /* view.cpp */; };
 		77291087230954FB002AA58E /* controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77291086230954FB002AA58E /* controller.cpp */; };
 		7729108923095508002AA58E /* model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7729108823095508002AA58E /* model.cpp */; };
@@ -25,9 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		77291081230954C7002AA58E /* view.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = view.h; sourceTree = "<group>"; };
-		77291082230954D3002AA58E /* controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = controller.h; sourceTree = "<group>"; };
-		77291083230954DB002AA58E /* model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = model.h; sourceTree = "<group>"; };
+		77083BF1230980A40061F749 /* util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		77083BF2230980A40061F749 /* util.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = util.hpp; sourceTree = "<group>"; };
+		77291081230954C7002AA58E /* view.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = view.hpp; sourceTree = "<group>"; };
+		77291082230954D3002AA58E /* controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = controller.hpp; sourceTree = "<group>"; };
+		77291083230954DB002AA58E /* model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = model.hpp; sourceTree = "<group>"; };
 		77291084230954ED002AA58E /* view.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = view.cpp; sourceTree = "<group>"; };
 		77291086230954FB002AA58E /* controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = controller.cpp; sourceTree = "<group>"; };
 		7729108823095508002AA58E /* model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = model.cpp; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 				77291084230954ED002AA58E /* view.cpp */,
 				77291086230954FB002AA58E /* controller.cpp */,
 				7729108823095508002AA58E /* model.cpp */,
+				77083BF1230980A40061F749 /* util.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -58,9 +62,10 @@
 		772910802309522C002AA58E /* include */ = {
 			isa = PBXGroup;
 			children = (
-				77291081230954C7002AA58E /* view.h */,
-				77291082230954D3002AA58E /* controller.h */,
-				77291083230954DB002AA58E /* model.h */,
+				77291081230954C7002AA58E /* view.hpp */,
+				77291082230954D3002AA58E /* controller.hpp */,
+				77291083230954DB002AA58E /* model.hpp */,
+				77083BF2230980A40061F749 /* util.hpp */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				77291087230954FB002AA58E /* controller.cpp in Sources */,
 				77291085230954ED002AA58E /* view.cpp in Sources */,
 				7729108923095508002AA58E /* model.cpp in Sources */,
+				77083BF3230980A40061F749 /* util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

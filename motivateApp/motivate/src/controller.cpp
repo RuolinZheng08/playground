@@ -6,7 +6,7 @@
 //  Copyright © 2019 Ruolin Zheng. All rights reserved.
 //
 
-#include "controller.h"
+#include "controller.hpp"
 
 wxIMPLEMENT_APP(MyApp);
 

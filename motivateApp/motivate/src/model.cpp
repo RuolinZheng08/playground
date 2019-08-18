@@ -6,7 +6,7 @@
 //  Copyright © 2019 Ruolin Zheng. All rights reserved.
 //
 
-#include "model.h"
+#include "model.hpp"
 
 ListItem::ListItem(std::string name, std::string description, int num) {
     name = name;

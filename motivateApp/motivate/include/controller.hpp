@@ -9,8 +9,8 @@
 #ifndef controller_h
 #define controller_h
 
-#include "model.h"
-#include "view.h"
+#include "model.hpp"
+#include "view.hpp"
 
 class MyApp: public wxApp {
 public:
