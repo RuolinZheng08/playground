@@ -9,5 +9,7 @@
 #ifndef model_h
 #define model_h
 
+#include <vector>
+#include <map>
 
 #endif /* model_h */

@@ -10,7 +10,6 @@
 		77291085230954ED002AA58E /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77291084230954ED002AA58E /* view.cpp */; };
 		77291087230954FB002AA58E /* controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77291086230954FB002AA58E /* controller.cpp */; };
 		7729108923095508002AA58E /* model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7729108823095508002AA58E /* model.cpp */; };
-		775ABC46230701D200C2A41E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 775ABC45230701D200C2A41E /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,8 +32,6 @@
 		77291086230954FB002AA58E /* controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = controller.cpp; sourceTree = "<group>"; };
 		7729108823095508002AA58E /* model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = model.cpp; sourceTree = "<group>"; };
 		775ABC42230701D200C2A41E /* motivate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = motivate; sourceTree = BUILT_PRODUCTS_DIR; };
-		775ABC45230701D200C2A41E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		775ABC4C2307026700C2A41E /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +48,6 @@
 		7729107F23095226002AA58E /* src */ = {
 			isa = PBXGroup;
 			children = (
-				775ABC45230701D200C2A41E /* main.cpp */,
 				77291084230954ED002AA58E /* view.cpp */,
 				77291086230954FB002AA58E /* controller.cpp */,
 				7729108823095508002AA58E /* model.cpp */,
@@ -62,7 +58,6 @@
 		772910802309522C002AA58E /* include */ = {
 			isa = PBXGroup;
 			children = (
-				775ABC4C2307026700C2A41E /* main.h */,
 				77291081230954C7002AA58E /* view.h */,
 				77291082230954D3002AA58E /* controller.h */,
 				77291083230954DB002AA58E /* model.h */,
@@ -153,7 +148,6 @@
 			files = (
 				77291087230954FB002AA58E /* controller.cpp in Sources */,
 				77291085230954ED002AA58E /* view.cpp in Sources */,
-				775ABC46230701D200C2A41E /* main.cpp in Sources */,
 				7729108923095508002AA58E /* model.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

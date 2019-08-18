@@ -9,5 +9,6 @@
 #ifndef view_h
 #define view_h
 
+#include <wx/wx.h>
 
 #endif /* view_h */

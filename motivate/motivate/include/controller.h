@@ -9,5 +9,6 @@
 #ifndef controller_h
 #define controller_h
 
+#include "model.h"
 
 #endif /* controller_h */
