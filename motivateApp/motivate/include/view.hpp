@@ -22,22 +22,31 @@ const int HISTORY_DATE_SPACING = 20;
 const std::string TOKEN = "☆";
 const std::string TOKEN_USED = "★";
 
-class MyScrolledPane: public wxScrolledWindow {
+class HistoryPane: public wxScrolledWindow {
 public:
-    wxBoxSizer *paneSizer;
-    
-    MyScrolledPane(wxWindow *parent, wxWindowID id);
-    // for history
+    HistoryPane(wxWindow *parent, wxWindowID id);
     void drawRecordMap(std::map<std::string, std::vector<Record>> recordMap);
-    // for achievements and wishes
+private:
+    wxBoxSizer *paneSizer;
+    std::vector<wxStaticText *> tokens;
+    
+    void drawDateText(std::string date);
+    void drawToken();
+};
+
+class RecordListPane: public wxScrolledWindow {
+public:
+    RecordListPane(wxWindow *parent, wxWindowID id);
     void drawRecordList(std::vector<Record> recordList);
+private:
+     wxBoxSizer *paneSizer;
 };
 
 class MyNotebookFrame: public wxFrame {
 public:
-    MyScrolledPane *historyTab;
-    MyScrolledPane *achieveTab;
-    MyScrolledPane *wishTab;
+    HistoryPane *historyPane;
+    RecordListPane *achievePane;
+    RecordListPane *wishPane;
     
     MyNotebookFrame(const wxString &title);
 };

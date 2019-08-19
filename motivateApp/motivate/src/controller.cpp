@@ -17,9 +17,9 @@ bool MyApp::OnInit() {
     // view
     view = new MyView();
     
-    view->frame->historyTab->drawRecordMap(model->recordMap);
-    view->frame->achieveTab->drawRecordList(model->achievements);
-    view->frame->wishTab->drawRecordList(model->wishes);
+    view->frame->historyPane->drawRecordMap(model->recordMap);
+    view->frame->achievePane->drawRecordList(model->achievements);
+    view->frame->wishPane->drawRecordList(model->wishes);
     view->frame->Show(true);
     return true;
 }
