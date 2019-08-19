@@ -13,6 +13,7 @@ MyView::MyView() {
 }
 
 HistoryPane::HistoryPane(wxWindow *parent, wxWindowID id): wxScrolledWindow(parent, id) {
+    unusedTokenIdx = 0;
     paneSizer = new wxBoxSizer(wxVERTICAL);
     SetSizer(paneSizer);
     FitInside();
@@ -34,9 +35,17 @@ void HistoryPane::drawRecordMap(std::map<std::string, std::vector<Record>> recor
         for (int i = 0; i < recordList.size(); i++) {
             wxStaticText *token = new wxStaticText(this, wxID_ANY, TOKEN);
             tokenSizer->Add(token, 0, wxRIGHT, HISTORY_BASIC_SPACING);
+            tokens.push_back(token);
         }
         paneSizer->Add(tokenSizer);
     }
+}
+
+void HistoryPane::colorRecordMap(int offset) {
+    for (int i = unusedTokenIdx; i < unusedTokenIdx + offset; i++) {
+        tokens[i]->SetLabel(TOKEN_USED);
+    }
+    unusedTokenIdx = unusedTokenIdx + offset;
 }
 
 RecordListPane::RecordListPane(wxWindow *parent, wxWindowID id): wxScrolledWindow(parent, id) {

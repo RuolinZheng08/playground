@@ -18,6 +18,7 @@ bool MyApp::OnInit() {
     view = new MyView();
     
     view->frame->historyPane->drawRecordMap(model->recordMap);
+    view->frame->historyPane->colorRecordMap(model->numUsed);
     view->frame->achievePane->drawRecordList(model->achievements);
     view->frame->wishPane->drawRecordList(model->wishes);
     view->frame->Show(true);

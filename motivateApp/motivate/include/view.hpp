@@ -26,18 +26,22 @@ class HistoryPane: public wxScrolledWindow {
 public:
     HistoryPane(wxWindow *parent, wxWindowID id);
     void drawRecordMap(std::map<std::string, std::vector<Record>> recordMap);
+    // mark tokens from unusedTokenIdx to unusedTokenIdx + offset - 1 as used
+    void colorRecordMap(int offset);
+    
 private:
     wxBoxSizer *paneSizer;
     std::vector<wxStaticText *> tokens;
+    int unusedTokenIdx;  // idx of the next unused token
     
     void drawDateText(std::string date);
-    void drawToken();
 };
 
 class RecordListPane: public wxScrolledWindow {
 public:
     RecordListPane(wxWindow *parent, wxWindowID id);
     void drawRecordList(std::vector<Record> recordList);
+    
 private:
      wxBoxSizer *paneSizer;
 };

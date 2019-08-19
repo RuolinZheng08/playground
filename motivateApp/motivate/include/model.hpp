@@ -21,6 +21,7 @@ public:
     std::map<std::string, std::vector<Record>> recordMap;
     std::vector<Record> achievements;
     std::vector<Record> wishes;
+    int numUsed;  // the number of used tokens
     
     MyModel();
 };

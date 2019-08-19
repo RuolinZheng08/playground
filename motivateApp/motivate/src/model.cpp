@@ -9,6 +9,8 @@
 #include "model.hpp"
 
 MyModel::MyModel() {
+    numUsed = 103;
+    
     // map
     time_t seconds = 1262304000;
     std::string name = "LeetCode";
