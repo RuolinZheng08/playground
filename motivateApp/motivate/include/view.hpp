@@ -17,10 +17,18 @@
 
 const int WINDOW_WIDTH = 350;
 const int WINDOW_HEIGHT = 350;
-const int HISTORY_BASIC_SPACING = 3;
-const int HISTORY_DATE_SPACING = 20;
+const int SMALL_SPACING = 3;
+const int MEDIUM_SPACING = 3;
+const int RECORD_ROW_SPACING = 20;
 const std::string TOKEN = "☆";
 const std::string TOKEN_USED = "★";
+const std::string ADD = "+";
+const std::string REMOVE = "-";
+const std::string INFO = "!";
+
+const int HISTORY_ID_OFFSET = 1000;
+const int ACHIEVE_ID_OFFSET = 2000;
+const int WISHLIST_ID_OFFSET = 3000;
 
 class HistoryPane: public wxScrolledWindow {
 public:
@@ -44,6 +52,8 @@ public:
     
 private:
      wxBoxSizer *paneSizer;
+    
+    void drawRecord(Record record);
 };
 
 class MyNotebookFrame: public wxFrame {

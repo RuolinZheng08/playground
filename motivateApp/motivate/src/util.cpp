@@ -15,8 +15,8 @@ std::string timeToDate(time_t seconds) {
     return std::string(date);
 }
 
-Record::Record(std::string &name, std::string &description, int num) {
+Record::Record(std::string &name, std::string &description, int numTok) {
     this->name = name;
     this->description = description;
-    this->num = num;
+    this->numTok = numTok;
 }

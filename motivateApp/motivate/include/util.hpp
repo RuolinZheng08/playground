@@ -21,9 +21,9 @@ class Record {
 public:
     std::string name;
     std::string description;
-    int num;  // number of tokens
+    int numTok;  // number of tokens
     
-    Record(std::string &name, std::string &description, int num);
+    Record(std::string &name, std::string &description, int numTok);
 };
 
 #endif /* util_hpp */
