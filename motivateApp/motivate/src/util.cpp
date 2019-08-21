@@ -14,9 +14,3 @@ std::string timeToDate(time_t seconds) {
     strftime(date, sizeof(date), "%Y-%m-%d", tm);
     return std::string(date);
 }
-
-Record::Record(std::string &name, std::string &description, int numTok) {
-    this->name = name;
-    this->description = description;
-    this->numTok = numTok;
-}

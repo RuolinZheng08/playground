@@ -24,3 +24,22 @@ bool MyApp::OnInit() {
     view->frame->Show(true);
     return true;
 }
+
+void HistoryPane::OnInfoBtn(wxCommandEvent &event) {
+    wxDialog *dlg = new wxDialog(this, wxID_ANY, _T("afaf"));
+    if (dlg->ShowModal() == wxID_OK) {
+        Close();
+    }
+}
+
+void RecordListPane::OnInfoBtn(wxCommandEvent &event) {
+    
+}
+
+void RecordListPane::OnAddBtn(wxCommandEvent &event) {
+    
+}
+
+void RecordListPane::OnRmvBtn(wxCommandEvent &event) {
+    
+}

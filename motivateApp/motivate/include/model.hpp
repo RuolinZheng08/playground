@@ -13,7 +13,14 @@
 #include <vector>
 #include <map>
 #include <wx/wx.h>
+#include <sqlite3.h>
 #include "util.hpp"
+
+const std::string dbFileName = "motivate.db";
+const std::string historyTableGained = "historyTableGained";
+const std::string historyTableSpent = "historyTableSpent";
+const std::string recordTableGained = "recordTableGained";
+const std::string recordTableSpent = "recordTableSpent";
 
 class MyModel {
 public:
@@ -23,7 +30,18 @@ public:
     std::vector<Record> wishes;
     int numUsed;  // the number of used tokens
     
-    MyModel();
+    MyModel();  // open and load from database
+    ~MyModel();  // close database
+    
+private:
+    void openDB();  // create tables if not exist
+    void closeDB();
+    void removeDB();
+    
+    void insertHistoryGained();
+    void insertHistorySpent();
+    void insertRecordGained();  // achievements
+    void insertRecordSpent();  // wish list
 };
 
 #endif /* model_h */

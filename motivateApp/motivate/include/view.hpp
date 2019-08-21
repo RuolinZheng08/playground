@@ -43,6 +43,9 @@ private:
     int unusedTokenIdx;  // idx of the next unused token
     
     void drawDateText(std::string date);
+    
+    // controller.cpp
+    void OnInfoBtn(wxCommandEvent &event);
 };
 
 class RecordListPane: public wxScrolledWindow {
@@ -54,6 +57,11 @@ private:
      wxBoxSizer *paneSizer;
     
     void drawRecord(Record record);
+    
+    // controller.cpp
+    void OnInfoBtn(wxCommandEvent &event);
+    void OnAddBtn(wxCommandEvent &event);
+    void OnRmvBtn(wxCommandEvent &event);
 };
 
 class MyNotebookFrame: public wxFrame {

@@ -25,12 +25,11 @@ void HistoryPane::drawDateText(std::string date) {
     wxStaticText *dateText = new wxStaticText(this, wxID_ANY, date);
     dateSizer->Add(dateText, 0, wxEXPAND | wxALIGN_LEFT);
     dateSizer->Add(new wxStaticText(this, wxID_ANY, ""), 0, wxEXPAND);
-    //int infoBtnId = wxID_HIGHEST + HISTORY_ID_OFFSET + ;
     wxButton *infoBtn = new wxButton(this, wxID_ANY, INFO);
     dateSizer->Add(infoBtn, 0, wxEXPAND | wxALIGN_RIGHT);
     paneSizer->Add(dateSizer, 0, wxTOP | wxBOTTOM | wxEXPAND, RECORD_ROW_SPACING);
     
-    //btn->Connect
+    infoBtn->Bind(wxEVT_BUTTON, &HistoryPane::OnInfoBtn, this);
 }
 
 void HistoryPane::drawRecordMap(std::map<std::string, std::vector<Record>> recordMap) {
@@ -56,6 +55,8 @@ void HistoryPane::colorRecordMap(int offset) {
     unusedTokenIdx = unusedTokenIdx + offset;
 }
 
+// RecordListPane
+
 RecordListPane::RecordListPane(wxWindow *parent, wxWindowID id): wxScrolledWindow(parent, id) {
     paneSizer = new wxBoxSizer(wxVERTICAL);
     SetSizer(paneSizer);
@@ -73,7 +74,7 @@ void RecordListPane::drawRecordList(std::vector<Record> recordList) {
 void RecordListPane::drawRecord(Record record) {
     // UI: do work -- 3 ☆ + - !
     wxGridSizer *recordSizer = new wxFlexGridSizer(2, 3, SMALL_SPACING, MEDIUM_SPACING);
-    wxStaticText *name = new wxStaticText(this, wxID_ANY, record.name);
+    wxStaticText *name = new wxStaticText(this, wxID_ANY, record.mName);
     recordSizer->Add(name, 0, wxEXPAND | wxALIGN_LEFT);
     recordSizer->Add(new wxStaticText(this, wxID_ANY, ""), 0, wxEXPAND);
     wxStaticText *tok = new wxStaticText(this, wxID_ANY, wxString::Format("%d %s", record.numTok, TOKEN));
@@ -88,7 +89,7 @@ void RecordListPane::drawRecord(Record record) {
     paneSizer->Add(recordSizer, 0, wxTOP | wxBOTTOM | wxEXPAND, RECORD_ROW_SPACING);
 }
 
-MyNotebookFrame::MyNotebookFrame(const wxString &title): wxFrame(NULL, wxID_ANY, title) {
+MyNotebookFrame::MyNotebookFrame(const wxString &title): wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxDefaultSize) {
     wxNotebook *notebook = new wxNotebook(this, wxID_ANY);
     
     historyPane = new HistoryPane(notebook, wxID_ANY);
