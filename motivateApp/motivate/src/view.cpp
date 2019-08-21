@@ -23,12 +23,12 @@ HistoryPane::HistoryPane(wxWindow *parent, wxWindowID id): wxScrolledWindow(pare
 void HistoryPane::drawDateText(std::string date) {
     wxGridSizer *dateSizer = new wxGridSizer(1, 3, MEDIUM_SPACING, MEDIUM_SPACING);
     wxStaticText *dateText = new wxStaticText(this, wxID_ANY, date);
-    dateSizer->Add(dateText, 0, wxEXPAND);
-    dateSizer->Add(new wxStaticText(this, wxID_ANY, "   "), 0, wxEXPAND);
+    dateSizer->Add(dateText, 0, wxEXPAND | wxALIGN_LEFT);
+    dateSizer->Add(new wxStaticText(this, wxID_ANY, ""), 0, wxEXPAND);
     //int infoBtnId = wxID_HIGHEST + HISTORY_ID_OFFSET + ;
     wxButton *infoBtn = new wxButton(this, wxID_ANY, INFO);
-    dateSizer->Add(infoBtn, 0, wxEXPAND);
-    paneSizer->Add(dateSizer, 0, wxTOP | wxBOTTOM, RECORD_ROW_SPACING);
+    dateSizer->Add(infoBtn, 0, wxEXPAND | wxALIGN_RIGHT);
+    paneSizer->Add(dateSizer, 0, wxTOP | wxBOTTOM | wxEXPAND, RECORD_ROW_SPACING);
     
     //btn->Connect
 }
@@ -74,18 +74,18 @@ void RecordListPane::drawRecord(Record record) {
     // UI: do work -- 3 ☆ + - !
     wxGridSizer *recordSizer = new wxFlexGridSizer(2, 3, SMALL_SPACING, MEDIUM_SPACING);
     wxStaticText *name = new wxStaticText(this, wxID_ANY, record.name);
-    recordSizer->Add(name, 0, wxEXPAND);
-    recordSizer->Add(new wxStaticText(this, wxID_ANY, "   "), 0, wxEXPAND);
+    recordSizer->Add(name, 0, wxEXPAND | wxALIGN_LEFT);
+    recordSizer->Add(new wxStaticText(this, wxID_ANY, ""), 0, wxEXPAND);
     wxStaticText *tok = new wxStaticText(this, wxID_ANY, wxString::Format("%d %s", record.numTok, TOKEN));
-    recordSizer->Add(tok, 0, wxEXPAND);
+    recordSizer->Add(tok, 0, wxEXPAND | wxALIGN_RIGHT);
     wxButton *addBtn = new wxButton(this, wxID_ANY, ADD);
-    recordSizer->Add(addBtn, 0, wxEXPAND);
+    recordSizer->Add(addBtn, 0, wxEXPAND | wxALIGN_RIGHT);
     wxButton *rmvBtn = new wxButton(this, wxID_ANY, REMOVE);
-    recordSizer->Add(rmvBtn, 0, wxEXPAND);
+    recordSizer->Add(rmvBtn, 0, wxEXPAND | wxALIGN_RIGHT);
     wxButton *infoBtn = new wxButton(this, wxID_ANY, INFO);
-    recordSizer->Add(infoBtn, 0, wxEXPAND);
+    recordSizer->Add(infoBtn, 0, wxEXPAND | wxALIGN_RIGHT);
     
-    paneSizer->Add(recordSizer, 0, wxTOP | wxBOTTOM, RECORD_ROW_SPACING);
+    paneSizer->Add(recordSizer, 0, wxTOP | wxBOTTOM | wxEXPAND, RECORD_ROW_SPACING);
 }
 
 MyNotebookFrame::MyNotebookFrame(const wxString &title): wxFrame(NULL, wxID_ANY, title) {
