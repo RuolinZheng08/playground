@@ -10,7 +10,6 @@
 		77A811E7231019C400A5CFD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A811E6231019C400A5CFD9 /* AppDelegate.m */; };
 		77A811E9231019C400A5CFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A811E8231019C400A5CFD9 /* Assets.xcassets */; };
 		77A811EC231019C400A5CFD9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A811EA231019C400A5CFD9 /* MainMenu.xib */; };
-		77A811EF231019C400A5CFD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A811EE231019C400A5CFD9 /* main.m */; };
 		77A811FA23101B0C00A5CFD9 /* model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A811F823101B0C00A5CFD9 /* model.cpp */; };
 		77A811FD23101B2900A5CFD9 /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A811FB23101B2900A5CFD9 /* view.cpp */; };
 		77A8120023101B3600A5CFD9 /* controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A811FE23101B3600A5CFD9 /* controller.cpp */; };
@@ -24,7 +23,6 @@
 		77A811E8231019C400A5CFD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77A811EB231019C400A5CFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		77A811ED231019C400A5CFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77A811EE231019C400A5CFD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		77A811F0231019C400A5CFD9 /* motivateApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = motivateApp.entitlements; sourceTree = "<group>"; };
 		77A811F823101B0C00A5CFD9 /* model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = model.cpp; sourceTree = "<group>"; };
 		77A811F923101B0C00A5CFD9 /* model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = model.hpp; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				77A811E8231019C400A5CFD9 /* Assets.xcassets */,
 				77A811EA231019C400A5CFD9 /* MainMenu.xib */,
 				77A811ED231019C400A5CFD9 /* Info.plist */,
-				77A811EE231019C400A5CFD9 /* main.m */,
 				77A811F0231019C400A5CFD9 /* motivateApp.entitlements */,
 			);
 			path = motivateApp;
@@ -171,7 +168,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A811FD23101B2900A5CFD9 /* view.cpp in Sources */,
-				77A811EF231019C400A5CFD9 /* main.m in Sources */,
 				77A8120023101B3600A5CFD9 /* controller.cpp in Sources */,
 				77A811E7231019C400A5CFD9 /* AppDelegate.m in Sources */,
 				77A811FA23101B0C00A5CFD9 /* model.cpp in Sources */,

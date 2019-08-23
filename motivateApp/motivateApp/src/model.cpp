@@ -7,3 +7,7 @@
 //
 
 #include "model.hpp"
+
+MyModel::MyModel() {
+    
+}

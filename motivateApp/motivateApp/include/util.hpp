@@ -23,7 +23,7 @@ public:
     time_t mTime;  // unix seconds
     int mNumTok;  // number of tokens
     
-    Record(std::string name, time_t seconds, int numTok): mName(name), mTime(seconds), numTok(mNumTok) {}
+    Record(std::string name, time_t seconds, int numTok): mName(name), mTime(seconds), mNumTok(numTok) {}
 };
 
 #endif /* util_hpp */

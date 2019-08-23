@@ -13,9 +13,25 @@
 #include <wx/wx.h>
 #include "util.hpp"
 
+const int SMALL_SPACING = 3;
+const std::string TOKEN = "☆";
+const std::string TOKEN_USED = "★";
+enum {
+    BTN_ADD = wxID_HIGHEST + 1
+};
+
+class MyFrame: public wxFrame {
+public:
+    MyFrame();
+    
+private:
+    wxBoxSizer *mSizer;
+    wxBoxSizer *mRecordSizer;
+};
+
 class MyView {
 public:
-    wxFrame *frame;
+    MyFrame *mFrame;
     
     MyView();
 };

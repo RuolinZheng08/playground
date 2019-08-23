@@ -16,6 +16,6 @@ bool MyApp::OnInit() {
     
     // view
     mView = new MyView();
-    mView->frame->Show(true);
+    mView->mFrame->Show(true);
     return true;
 }
