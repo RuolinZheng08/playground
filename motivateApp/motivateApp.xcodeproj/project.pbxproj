@@ -7,35 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7719D082230AF0E300A46FF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7719D081230AF0E300A46FF6 /* AppDelegate.m */; };
-		7719D084230AF0E400A46FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7719D083230AF0E400A46FF6 /* Assets.xcassets */; };
-		7719D087230AF0E400A46FF6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7719D085230AF0E400A46FF6 /* MainMenu.xib */; };
-		7719D09B230AF14000A46FF6 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7719D092230AF14000A46FF6 /* util.cpp */; };
-		7719D09C230AF14000A46FF6 /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7719D093230AF14000A46FF6 /* view.cpp */; };
-		7719D09D230AF14000A46FF6 /* model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7719D094230AF14000A46FF6 /* model.cpp */; };
-		7719D09E230AF14000A46FF6 /* controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7719D095230AF14000A46FF6 /* controller.cpp */; };
+		77A811E7231019C400A5CFD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A811E6231019C400A5CFD9 /* AppDelegate.m */; };
+		77A811E9231019C400A5CFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A811E8231019C400A5CFD9 /* Assets.xcassets */; };
+		77A811EC231019C400A5CFD9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A811EA231019C400A5CFD9 /* MainMenu.xib */; };
+		77A811EF231019C400A5CFD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A811EE231019C400A5CFD9 /* main.m */; };
+		77A811FA23101B0C00A5CFD9 /* model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A811F823101B0C00A5CFD9 /* model.cpp */; };
+		77A811FD23101B2900A5CFD9 /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A811FB23101B2900A5CFD9 /* view.cpp */; };
+		77A8120023101B3600A5CFD9 /* controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A811FE23101B3600A5CFD9 /* controller.cpp */; };
+		77A8120323101B9C00A5CFD9 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A8120223101B9C00A5CFD9 /* util.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7719D07D230AF0E300A46FF6 /* motivate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = motivate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7719D080230AF0E300A46FF6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7719D081230AF0E300A46FF6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7719D083230AF0E400A46FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7719D086230AF0E400A46FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		7719D088230AF0E400A46FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7719D08B230AF0E400A46FF6 /* motivate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = motivate.entitlements; sourceTree = "<group>"; };
-		7719D092230AF14000A46FF6 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
-		7719D093230AF14000A46FF6 /* view.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = view.cpp; sourceTree = "<group>"; };
-		7719D094230AF14000A46FF6 /* model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = model.cpp; sourceTree = "<group>"; };
-		7719D095230AF14000A46FF6 /* controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = controller.cpp; sourceTree = "<group>"; };
-		7719D097230AF14000A46FF6 /* controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = controller.hpp; sourceTree = "<group>"; };
-		7719D098230AF14000A46FF6 /* model.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = model.hpp; sourceTree = "<group>"; };
-		7719D099230AF14000A46FF6 /* view.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = view.hpp; sourceTree = "<group>"; };
-		7719D09A230AF14000A46FF6 /* util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = util.hpp; sourceTree = "<group>"; };
+		77A811E2231019C400A5CFD9 /* motivateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = motivateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A811E5231019C400A5CFD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		77A811E6231019C400A5CFD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		77A811E8231019C400A5CFD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77A811EB231019C400A5CFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		77A811ED231019C400A5CFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77A811EE231019C400A5CFD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		77A811F0231019C400A5CFD9 /* motivateApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = motivateApp.entitlements; sourceTree = "<group>"; };
+		77A811F823101B0C00A5CFD9 /* model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = model.cpp; sourceTree = "<group>"; };
+		77A811F923101B0C00A5CFD9 /* model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = model.hpp; sourceTree = "<group>"; };
+		77A811FB23101B2900A5CFD9 /* view.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = view.cpp; sourceTree = "<group>"; };
+		77A811FC23101B2900A5CFD9 /* view.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = view.hpp; sourceTree = "<group>"; };
+		77A811FE23101B3600A5CFD9 /* controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = controller.cpp; sourceTree = "<group>"; };
+		77A811FF23101B3600A5CFD9 /* controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = controller.hpp; sourceTree = "<group>"; };
+		77A8120123101B9500A5CFD9 /* util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = util.hpp; sourceTree = "<group>"; };
+		77A8120223101B9C00A5CFD9 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7719D07A230AF0E300A46FF6 /* Frameworks */ = {
+		77A811DF231019C400A5CFD9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,55 +47,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7719D074230AF0E300A46FF6 = {
+		77A811D9231019C400A5CFD9 = {
 			isa = PBXGroup;
 			children = (
-				7719D07F230AF0E300A46FF6 /* motivate */,
-				7719D07E230AF0E300A46FF6 /* Products */,
+				77A811E4231019C400A5CFD9 /* motivateApp */,
+				77A811E3231019C400A5CFD9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7719D07E230AF0E300A46FF6 /* Products */ = {
+		77A811E3231019C400A5CFD9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7719D07D230AF0E300A46FF6 /* motivate.app */,
+				77A811E2231019C400A5CFD9 /* motivateApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7719D07F230AF0E300A46FF6 /* motivate */ = {
+		77A811E4231019C400A5CFD9 /* motivateApp */ = {
 			isa = PBXGroup;
 			children = (
-				7719D096230AF14000A46FF6 /* include */,
-				7719D091230AF14000A46FF6 /* src */,
-				7719D080230AF0E300A46FF6 /* AppDelegate.h */,
-				7719D081230AF0E300A46FF6 /* AppDelegate.m */,
-				7719D083230AF0E400A46FF6 /* Assets.xcassets */,
-				7719D085230AF0E400A46FF6 /* MainMenu.xib */,
-				7719D088230AF0E400A46FF6 /* Info.plist */,
-				7719D08B230AF0E400A46FF6 /* motivate.entitlements */,
+				77A811F7231019D100A5CFD9 /* include */,
+				77A811F6231019CD00A5CFD9 /* src */,
+				77A811E5231019C400A5CFD9 /* AppDelegate.h */,
+				77A811E6231019C400A5CFD9 /* AppDelegate.m */,
+				77A811E8231019C400A5CFD9 /* Assets.xcassets */,
+				77A811EA231019C400A5CFD9 /* MainMenu.xib */,
+				77A811ED231019C400A5CFD9 /* Info.plist */,
+				77A811EE231019C400A5CFD9 /* main.m */,
+				77A811F0231019C400A5CFD9 /* motivateApp.entitlements */,
 			);
-			path = motivate;
+			path = motivateApp;
 			sourceTree = "<group>";
 		};
-		7719D091230AF14000A46FF6 /* src */ = {
+		77A811F6231019CD00A5CFD9 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				7719D092230AF14000A46FF6 /* util.cpp */,
-				7719D093230AF14000A46FF6 /* view.cpp */,
-				7719D094230AF14000A46FF6 /* model.cpp */,
-				7719D095230AF14000A46FF6 /* controller.cpp */,
+				77A8120223101B9C00A5CFD9 /* util.cpp */,
+				77A811F823101B0C00A5CFD9 /* model.cpp */,
+				77A811FB23101B2900A5CFD9 /* view.cpp */,
+				77A811FE23101B3600A5CFD9 /* controller.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
 		};
-		7719D096230AF14000A46FF6 /* include */ = {
+		77A811F7231019D100A5CFD9 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				7719D097230AF14000A46FF6 /* controller.hpp */,
-				7719D098230AF14000A46FF6 /* model.hpp */,
-				7719D099230AF14000A46FF6 /* view.hpp */,
-				7719D09A230AF14000A46FF6 /* util.hpp */,
+				77A8120123101B9500A5CFD9 /* util.hpp */,
+				77A811F923101B0C00A5CFD9 /* model.hpp */,
+				77A811FC23101B2900A5CFD9 /* view.hpp */,
+				77A811FF23101B3600A5CFD9 /* controller.hpp */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -101,38 +104,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7719D07C230AF0E300A46FF6 /* motivate */ = {
+		77A811E1231019C400A5CFD9 /* motivateApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7719D08E230AF0E400A46FF6 /* Build configuration list for PBXNativeTarget "motivate" */;
+			buildConfigurationList = 77A811F3231019C400A5CFD9 /* Build configuration list for PBXNativeTarget "motivateApp" */;
 			buildPhases = (
-				7719D079230AF0E300A46FF6 /* Sources */,
-				7719D07A230AF0E300A46FF6 /* Frameworks */,
-				7719D07B230AF0E300A46FF6 /* Resources */,
+				77A811DE231019C400A5CFD9 /* Sources */,
+				77A811DF231019C400A5CFD9 /* Frameworks */,
+				77A811E0231019C400A5CFD9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = motivate;
-			productName = motivate;
-			productReference = 7719D07D230AF0E300A46FF6 /* motivate.app */;
+			name = motivateApp;
+			productName = motivateApp;
+			productReference = 77A811E2231019C400A5CFD9 /* motivateApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7719D075230AF0E300A46FF6 /* Project object */ = {
+		77A811DA231019C400A5CFD9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Ruolin Zheng";
 				TargetAttributes = {
-					7719D07C230AF0E300A46FF6 = {
+					77A811E1231019C400A5CFD9 = {
 						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
-			buildConfigurationList = 7719D078230AF0E300A46FF6 /* Build configuration list for PBXProject "motivate" */;
+			buildConfigurationList = 77A811DD231019C400A5CFD9 /* Build configuration list for PBXProject "motivateApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -140,48 +143,49 @@
 				en,
 				Base,
 			);
-			mainGroup = 7719D074230AF0E300A46FF6;
-			productRefGroup = 7719D07E230AF0E300A46FF6 /* Products */;
+			mainGroup = 77A811D9231019C400A5CFD9;
+			productRefGroup = 77A811E3231019C400A5CFD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7719D07C230AF0E300A46FF6 /* motivate */,
+				77A811E1231019C400A5CFD9 /* motivateApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7719D07B230AF0E300A46FF6 /* Resources */ = {
+		77A811E0231019C400A5CFD9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7719D084230AF0E400A46FF6 /* Assets.xcassets in Resources */,
-				7719D087230AF0E400A46FF6 /* MainMenu.xib in Resources */,
+				77A811E9231019C400A5CFD9 /* Assets.xcassets in Resources */,
+				77A811EC231019C400A5CFD9 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7719D079230AF0E300A46FF6 /* Sources */ = {
+		77A811DE231019C400A5CFD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7719D082230AF0E300A46FF6 /* AppDelegate.m in Sources */,
-				7719D09B230AF14000A46FF6 /* util.cpp in Sources */,
-				7719D09E230AF14000A46FF6 /* controller.cpp in Sources */,
-				7719D09C230AF14000A46FF6 /* view.cpp in Sources */,
-				7719D09D230AF14000A46FF6 /* model.cpp in Sources */,
+				77A811FD23101B2900A5CFD9 /* view.cpp in Sources */,
+				77A811EF231019C400A5CFD9 /* main.m in Sources */,
+				77A8120023101B3600A5CFD9 /* controller.cpp in Sources */,
+				77A811E7231019C400A5CFD9 /* AppDelegate.m in Sources */,
+				77A811FA23101B0C00A5CFD9 /* model.cpp in Sources */,
+				77A8120323101B9C00A5CFD9 /* util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7719D085230AF0E400A46FF6 /* MainMenu.xib */ = {
+		77A811EA231019C400A5CFD9 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7719D086230AF0E400A46FF6 /* Base */,
+				77A811EB231019C400A5CFD9 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -189,7 +193,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7719D08C230AF0E400A46FF6 /* Debug */ = {
+		77A811F1231019C400A5CFD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,7 +252,7 @@
 			};
 			name = Debug;
 		};
-		7719D08D230AF0E400A46FF6 /* Release */ = {
+		77A811F2231019C400A5CFD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -300,14 +304,14 @@
 			};
 			name = Release;
 		};
-		7719D08F230AF0E400A46FF6 /* Debug */ = {
+		77A811F4231019C400A5CFD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = motivate/motivate.entitlements;
+				CODE_SIGN_ENTITLEMENTS = motivateApp/motivateApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = motivate/Info.plist;
+				INFOPLIST_FILE = motivateApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -346,19 +350,19 @@
 					"-lwx_baseu_net-3.0",
 					"-lwx_baseu-3.0",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ruolinzheng.motivate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruolinzheng.motivateApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		7719D090230AF0E400A46FF6 /* Release */ = {
+		77A811F5231019C400A5CFD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = motivate/motivate.entitlements;
+				CODE_SIGN_ENTITLEMENTS = motivateApp/motivateApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = motivate/Info.plist;
+				INFOPLIST_FILE = motivateApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -397,7 +401,7 @@
 					"-lwx_baseu_net-3.0",
 					"-lwx_baseu-3.0",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ruolinzheng.motivate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruolinzheng.motivateApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -405,25 +409,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7719D078230AF0E300A46FF6 /* Build configuration list for PBXProject "motivate" */ = {
+		77A811DD231019C400A5CFD9 /* Build configuration list for PBXProject "motivateApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7719D08C230AF0E400A46FF6 /* Debug */,
-				7719D08D230AF0E400A46FF6 /* Release */,
+				77A811F1231019C400A5CFD9 /* Debug */,
+				77A811F2231019C400A5CFD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7719D08E230AF0E400A46FF6 /* Build configuration list for PBXNativeTarget "motivate" */ = {
+		77A811F3231019C400A5CFD9 /* Build configuration list for PBXNativeTarget "motivateApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7719D08F230AF0E400A46FF6 /* Debug */,
-				7719D090230AF0E400A46FF6 /* Release */,
+				77A811F4231019C400A5CFD9 /* Debug */,
+				77A811F5231019C400A5CFD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7719D075230AF0E300A46FF6 /* Project object */;
+	rootObject = 77A811DA231019C400A5CFD9 /* Project object */;
 }

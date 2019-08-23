@@ -20,17 +20,10 @@ std::string timeToDate(time_t seconds);
 class Record {
 public:
     std::string mName;
-    std::string mDesc;
+    time_t mTime;  // unix seconds
     int mNumTok;  // number of tokens
     
-    Record(std::string &name, std::string &description, int numTok): mName(name), mDesc(description), mNumTok(numTok) {}
-};
-
-class History: public Record {
-public:
-    time_t mTime;  // unix seconds
-    
-    History(std::string &name, std::string &description, int numTok, time_t seconds): Record(name, description, numTok), mTime(seconds) {}
+    Record(std::string name, time_t seconds, int numTok): mName(name), mTime(seconds), numTok(mNumTok) {}
 };
 
 #endif /* util_hpp */
