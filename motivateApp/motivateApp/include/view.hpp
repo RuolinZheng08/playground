@@ -13,7 +13,9 @@
 #include <wx/wx.h>
 #include "util.hpp"
 
-const int SMALL_SPACING = 3;
+const int SMALL_SPACING = 5;
+const int MEDIUM_SPACING = 10;
+const int LARGE_SPACING = 15;
 const std::string TOKEN = "☆";
 const std::string TOKEN_USED = "★";
 enum {
