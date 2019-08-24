@@ -19,3 +19,10 @@ bool MyApp::OnInit() {
     mView->mFrame->Show(true);
     return true;
 }
+
+void MyFrame::OnBtnAdd(wxCommandEvent &event) {
+    AddRecordDialog *dlg = new AddRecordDialog();
+    if (dlg->ShowModal() == wxID_OK) {
+        Close();
+    }
+}
