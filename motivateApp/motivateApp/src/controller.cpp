@@ -22,7 +22,9 @@ bool MyApp::OnInit() {
 
 void MyFrame::OnBtnAdd(wxCommandEvent &event) {
     AddRecordDialog *dlg = new AddRecordDialog();
-    if (dlg->ShowModal() == wxID_OK) {
-        Close();
-    }
+    dlg->ShowModal();
+}
+
+void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
+    
 }

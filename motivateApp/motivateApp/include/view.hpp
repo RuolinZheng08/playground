@@ -16,14 +16,10 @@
 const int SMALL_SPACING = 5;
 const int MEDIUM_SPACING = 10;
 const int LARGE_SPACING = 15;
-const std::string TOKEN = "☆";
-const std::string TOKEN_USED = "★";
+const std::string TOKEN_GAINED = "☆";
+const std::string TOKEN_SPENT = "★";
 enum {
-    BTN_ADD = wxID_HIGHEST + 1,  // btnAdd
-    TXT_CTRL_NAME,  // text control name
-    RD_BTN_GAINED,  // radio button gained
-    RD_BTN_SPENT,  // radio button spent
-    TXT_CTRL_NUM  // text control num tokens
+    ID_TXT_CTRL_NUM = wxID_HIGHEST + 1
 };
 
 class MyFrame: public wxFrame {
@@ -34,12 +30,19 @@ private:
     wxBoxSizer *mSizer;
     wxBoxSizer *mRecordSizer;
     
-    void OnBtnAdd(wxCommandEvent &event);
+    void OnBtnAdd(wxCommandEvent &event);  // controller
 };
 
 class AddRecordDialog: public wxDialog {
 public:
     AddRecordDialog();
+    
+private:
+    wxTextCtrl *nameCtrl;
+    wxRadioBox *rbTokType;
+    wxTextCtrl *numCtrl;
+    
+    void OnBtnOk(wxCommandEvent &event);  // controller
 };
 
 class MyView {

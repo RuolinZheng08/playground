@@ -19,11 +19,11 @@ std::string timeToDate(time_t seconds);
 
 class Record {
 public:
-    std::string mName;
     time_t mTime;  // unix seconds
+    std::string mName;
     int mNumTok;  // number of tokens
     
-    Record(std::string name, time_t seconds, int numTok): mName(name), mTime(seconds), mNumTok(numTok) {}
+    Record(time_t seconds, std::string name, int numTok): mTime(seconds), mName(name), mNumTok(numTok) {}
 };
 
 #endif /* util_hpp */
