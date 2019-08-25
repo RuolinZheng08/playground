@@ -9,10 +9,17 @@
 #include "view.hpp"
 
 MyFrame::MyFrame(): wxFrame(NULL, wxID_ANY, _T("motivate")) {
-    mFrameSizer = new wxBoxSizer(wxVERTICAL);
-    wxButton *btnAdd = new wxButton(this, wxID_ANY, _T("Add New Record"));
-    mFrameSizer->Add(btnAdd, 0, wxALL, SMALL_SPACING);
-    SetSizer(mFrameSizer);
+    wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
+    wxScrolledWindow *mWindow = new wxScrolledWindow(this, wxID_ANY);
+    sizer->Add(mWindow, 1, wxEXPAND);
+    SetSizer(sizer);
+    
+    mWindowSizer = new wxBoxSizer(wxVERTICAL);
+    wxButton *btnAdd = new wxButton(mWindow, wxID_ANY, _T("Add New Record"));
+    mWindowSizer->Add(btnAdd, 0, wxALL, LARGE_SPACING);
+    mWindow->SetSizer(mWindowSizer);
+    mWindow->FitInside();
+    mWindow->SetScrollRate(5, 5);
     
     btnAdd->Bind(wxEVT_BUTTON, &MyFrame::OnBtnAdd, this);
 }
@@ -24,14 +31,14 @@ void MyFrame::DrawRecordGained(std::string date, Record record) {
         DrawDate(date);
         tokenSizer = new wxWrapSizer(wxHORIZONTAL);
         DrawTokensGained(tokenSizer, record.mNumTok);
-        mFrameSizer->Add(tokenSizer, 1, wxALIGN_CENTER_HORIZONTAL);
+        mWindowSizer->Add(tokenSizer);
         mDateSizerMap[date] = tokenSizer;
     } else {
         // draw tokens only
         tokenSizer = mDateSizerMap[date];
         DrawTokensGained(tokenSizer, record.mNumTok);
     }
-    mFrameSizer->Layout();
+    mWindowSizer->Layout();
 }
 
 void MyFrame::DrawNumSpent(unsigned int num) {
@@ -40,20 +47,20 @@ void MyFrame::DrawNumSpent(unsigned int num) {
 
 void MyFrame::DrawDate(std::string date) {
     wxBoxSizer *dateSizer = new wxBoxSizer(wxHORIZONTAL);
-    wxStaticText *dateText = new wxStaticText(this, wxID_ANY, date);
-    wxButton *btnDetails = new wxButton(this, wxID_ANY, _T("Details"));
+    wxStaticText *dateText = new wxStaticText(mWindow, wxID_ANY, date);
+    wxButton *btnDetails = new wxButton(mWindow, wxID_ANY, _T("Details"));
     
-    dateSizer->Add(dateText, 0);
-    dateSizer->AddSpacer(30);
-    dateSizer->Add(btnDetails, 0, wxALIGN_RIGHT);
-    mFrameSizer->Add(dateSizer, 1);
+    dateSizer->Add(dateText, 0, wxALL, LARGE_SPACING);
+    dateSizer->AddSpacer(200);
+    dateSizer->Add(btnDetails, 0);
+    mWindowSizer->Add(dateSizer, 1);
     
     btnDetails->Bind(wxEVT_BUTTON, &MyFrame::OnBtnDetails, this);
 }
 
 void MyFrame::DrawTokensGained(wxSizer *sizer, int numTok) {
     for (int i = 0; i < numTok; i++) {
-        wxStaticText *tok = new wxStaticText(this, wxID_ANY, TOKEN_GAINED);
+        wxStaticText *tok = new wxStaticText(mWindow, wxID_ANY, TOKEN_GAINED);
         sizer->Add(tok, 0, wxRIGHT, SMALL_SPACING);
         mUnusedTokens.push_back(tok);
     }

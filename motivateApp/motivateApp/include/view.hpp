@@ -35,7 +35,8 @@ public:
     void DrawNumSpent(unsigned int num);
     
 private:
-    wxBoxSizer *mFrameSizer;
+    wxScrolledWindow *mWindow;
+    wxBoxSizer *mWindowSizer;
     std::map<std::string, wxWrapSizer *> mDateSizerMap;
     // gained and not yet spent
     std::vector<wxStaticText *> mUnusedTokens;
