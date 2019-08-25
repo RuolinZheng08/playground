@@ -47,7 +47,13 @@ void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     time(&timev);
     std::string date = timeToDate(timev);
     std::string name = mNameCtrl->GetValue().ToStdString();
-    int num = stoi(mNumCtrl->GetValue().ToStdString());
+    std::string numStr = mNumCtrl->GetValue().ToStdString();
+    if (name == "" || numStr == "") {
+        event.Skip();
+        return;
+    }
+    
+    int num = stoi(numStr);
     if (num > 1001 || num <= 0) {
         wxMessageDialog *dlg = new wxMessageDialog(NULL, _T("Please input a number between 1 and 1000"), _T("Invalid number of tokens"), wxOK | wxICON_ERROR);
         dlg->ShowModal();
@@ -74,5 +80,5 @@ void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     } else {
         wxGetApp().mView->mPane->DrawNumSpent(-num);
     }
-    Close();
+g    Close();
 }
