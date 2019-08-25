@@ -11,6 +11,10 @@
 
 #include <stdio.h>
 #include <wx/wx.h>
+#include <wx/wrapsizer.h>
+#include <vector>
+#include <map>
+#include <string>
 #include "util.hpp"
 
 const int SMALL_SPACING = 5;
@@ -27,12 +31,21 @@ enum EVT_IDS {
 class MyFrame: public wxFrame {
 public:
     MyFrame();
+    void DrawRecordGained(std::string date, Record record);
+    void DrawNumSpent(unsigned int num);
     
 private:
-    wxBoxSizer *mSizer;
-    wxBoxSizer *mRecordSizer;
+    wxBoxSizer *mFrameSizer;
+    std::map<std::string, wxWrapSizer *> mDateSizerMap;
+    // gained and not yet spent
+    std::vector<wxStaticText *> mUnusedTokens;
     
-    void OnBtnAdd(wxCommandEvent &event);  // controller
+    void DrawDate(std::string date);
+    void DrawTokensGained(wxSizer *sizer, int numTok);
+    
+    // controller
+    void OnBtnAdd(wxCommandEvent &event);
+    void OnBtnDetails(wxCommandEvent &event);
 };
 
 class AddRecordDialog: public wxDialog {
@@ -40,9 +53,9 @@ public:
     AddRecordDialog();
     
 private:
-    wxTextCtrl *nameCtrl;
-    wxRadioBox *rbTokType;
-    wxTextCtrl *numCtrl;
+    wxTextCtrl *mNameCtrl;
+    wxRadioBox *mRbTokType;
+    wxTextCtrl *mNumCtrl;
     
     // controller
     void OnNumCtrl(wxKeyEvent &event);

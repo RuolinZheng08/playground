@@ -25,6 +25,10 @@ void MyFrame::OnBtnAdd(wxCommandEvent &event) {
     dlg->ShowModal();
 }
 
+void MyFrame::OnBtnDetails(wxCommandEvent &event) {
+    
+}
+
 void AddRecordDialog::OnNumCtrl(wxKeyEvent &event) {
     if (wxIsdigit(event.GetKeyCode()) || wxIscntrl(event.GetKeyCode())) {
         event.Skip();
@@ -36,23 +40,27 @@ void AddRecordDialog::OnNumCtrl(wxKeyEvent &event) {
 void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     time_t timev;
     time(&timev);
-    std::string name = nameCtrl->GetValue().ToStdString();
-    int num = stoi(numCtrl->GetValue().ToStdString());
-    if (num > 1001 || num < 0) {
-        wxMessageDialog *dlg = new wxMessageDialog(NULL,  _T("Please input a number between 0 and 1000"), _T("Invalid number of tokens"), wxOK | wxICON_ERROR);
+    std::string date = timeToDate(timev);
+    std::string name = mNameCtrl->GetValue().ToStdString();
+    int num = stoi(mNumCtrl->GetValue().ToStdString());
+    if (num > 1001 || num <= 0) {
+        wxMessageDialog *dlg = new wxMessageDialog(NULL,  _T("Please input a number between 1 and 1000"), _T("Invalid number of tokens"), wxOK | wxICON_ERROR);
         dlg->ShowModal();
+        dlg->Destroy();
     }
-    
-    if (rbTokType->GetSelection() == 1) {  // spent
+    if (mRbTokType->GetSelection() == 1) {  // spent
         num = -num;
     }
-    Record *record = new Record(timev, name, num);
-    std::vector<Record *> records = wxGetApp().mModel->mRecordMap[timeToDate(timev)];
-    records.push_back(record);
+    
+    // logic
+    Record record = Record(timev, name, num);
+    wxGetApp().mModel->mRecordMap[date].push_back(record);
     
     // UI
-    if (num < 0) {
-        
+    if (num > 0) {
+        wxGetApp().mView->mFrame->DrawRecordGained(date, record);
+    } else {
+        wxGetApp().mView->mFrame->DrawNumSpent(-num);
     }
     
     Close();

@@ -18,7 +18,7 @@ class MyModel {
 public:
     MyModel();
     
-    std::map<std::string, std::vector<Record *>> mRecordMap;
+    std::map<std::string, std::vector<Record>> mRecordMap;
 };
 
 #endif /* model_hpp */
