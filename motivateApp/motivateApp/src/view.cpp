@@ -8,59 +8,55 @@
 
 #include "view.hpp"
 
-MyFrame::MyFrame(): wxFrame(NULL, wxID_ANY, _T("motivate")) {
-    wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
-    wxScrolledWindow *mWindow = new wxScrolledWindow(this, wxID_ANY);
-    sizer->Add(mWindow, 1, wxEXPAND);
-    SetSizer(sizer);
+MyPane::MyPane(wxWindow *parent): wxScrolledWindow(parent, wxID_ANY) {
+    mPaneSizer = new wxBoxSizer(wxVERTICAL);
+    wxButton *btnAdd = new wxButton(this, wxID_ANY, _T("Add New Record"));
+    mPaneSizer->Add(btnAdd, 0, wxALL, MEDIUM_SPACING);
+    SetSizer(mPaneSizer);
+    FitInside();
+    SetScrollRate(5, 5);
     
-    mWindowSizer = new wxBoxSizer(wxVERTICAL);
-    wxButton *btnAdd = new wxButton(mWindow, wxID_ANY, _T("Add New Record"));
-    mWindowSizer->Add(btnAdd, 0, wxALL, LARGE_SPACING);
-    mWindow->SetSizer(mWindowSizer);
-    mWindow->FitInside();
-    mWindow->SetScrollRate(5, 5);
-    
-    btnAdd->Bind(wxEVT_BUTTON, &MyFrame::OnBtnAdd, this);
+    btnAdd->Bind(wxEVT_BUTTON, &MyPane::OnBtnAdd, this);
 }
 
-void MyFrame::DrawRecordGained(std::string date, Record record) {
+void MyPane::DrawRecordGained(std::string date, Record record) {
     wxWrapSizer *tokenSizer;
     if (mDateSizerMap.find(date) == mDateSizerMap.end()) {
         // draw date label and tokens
         DrawDate(date);
         tokenSizer = new wxWrapSizer(wxHORIZONTAL);
         DrawTokensGained(tokenSizer, record.mNumTok);
-        mWindowSizer->Add(tokenSizer);
+        mPaneSizer->Add(tokenSizer, 0, wxLEFT | wxRIGHT, MEDIUM_SPACING);
         mDateSizerMap[date] = tokenSizer;
     } else {
         // draw tokens only
         tokenSizer = mDateSizerMap[date];
         DrawTokensGained(tokenSizer, record.mNumTok);
     }
-    mWindowSizer->Layout();
+    FitInside();
+    mPaneSizer->Layout();
 }
 
-void MyFrame::DrawNumSpent(unsigned int num) {
+void MyPane::DrawNumSpent(unsigned int num) {
     
 }
 
-void MyFrame::DrawDate(std::string date) {
+void MyPane::DrawDate(std::string date) {
     wxBoxSizer *dateSizer = new wxBoxSizer(wxHORIZONTAL);
-    wxStaticText *dateText = new wxStaticText(mWindow, wxID_ANY, date);
-    wxButton *btnDetails = new wxButton(mWindow, wxID_ANY, _T("Details"));
+    wxStaticText *dateText = new wxStaticText(this, wxID_ANY, date);
+    wxButton *btnDetails = new wxButton(this, wxID_ANY, _T("Details"));
     
-    dateSizer->Add(dateText, 0, wxALL, LARGE_SPACING);
+    dateSizer->Add(dateText, 0);
     dateSizer->AddSpacer(200);
     dateSizer->Add(btnDetails, 0);
-    mWindowSizer->Add(dateSizer, 1);
+    mPaneSizer->Add(dateSizer, 0, wxALL, MEDIUM_SPACING);
     
-    btnDetails->Bind(wxEVT_BUTTON, &MyFrame::OnBtnDetails, this);
+    btnDetails->Bind(wxEVT_BUTTON, &MyPane::OnBtnDetails, this);
 }
 
-void MyFrame::DrawTokensGained(wxSizer *sizer, int numTok) {
+void MyPane::DrawTokensGained(wxSizer *sizer, int numTok) {
     for (int i = 0; i < numTok; i++) {
-        wxStaticText *tok = new wxStaticText(mWindow, wxID_ANY, TOKEN_GAINED);
+        wxStaticText *tok = new wxStaticText(this, wxID_ANY, TOKEN_GAINED);
         sizer->Add(tok, 0, wxRIGHT, SMALL_SPACING);
         mUnusedTokens.push_back(tok);
     }
@@ -118,5 +114,10 @@ AddRecordDialog::AddRecordDialog(): wxDialog(NULL, wxID_ANY, _T("Add New Record"
 }
 
 MyView::MyView() {
-    mFrame = new MyFrame();
+    wxFrame *frame = new wxFrame(NULL, wxID_ANY, _T("motivate"));
+    mPane = new MyPane(frame);
+    wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
+    sizer->Add(mPane, 1, wxEXPAND);
+    frame->SetSizer(sizer);
+    frame->Show();
 }

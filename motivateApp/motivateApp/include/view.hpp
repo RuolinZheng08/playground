@@ -18,8 +18,8 @@
 #include "util.hpp"
 
 const int SMALL_SPACING = 5;
-const int MEDIUM_SPACING = 10;
-const int LARGE_SPACING = 15;
+const int MEDIUM_SPACING = 15;
+const int LARGE_SPACING = 30;
 const std::string TOKEN_GAINED = "☆";
 const std::string TOKEN_SPENT = "★";
 
@@ -28,15 +28,14 @@ enum EVT_IDS {
     
 };
 
-class MyFrame: public wxFrame {
+class MyPane: public wxScrolledWindow {
 public:
-    MyFrame();
+    MyPane(wxWindow *parent);
     void DrawRecordGained(std::string date, Record record);
     void DrawNumSpent(unsigned int num);
     
 private:
-    wxScrolledWindow *mWindow;
-    wxBoxSizer *mWindowSizer;
+    wxBoxSizer *mPaneSizer;
     std::map<std::string, wxWrapSizer *> mDateSizerMap;
     // gained and not yet spent
     std::vector<wxStaticText *> mUnusedTokens;
@@ -65,7 +64,7 @@ private:
 
 class MyView {
 public:
-    MyFrame *mFrame;
+    MyPane *mPane;
     
     MyView();
 };

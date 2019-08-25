@@ -16,16 +16,15 @@ bool MyApp::OnInit() {
     
     // view
     mView = new MyView();
-    mView->mFrame->Show(true);
     return true;
 }
 
-void MyFrame::OnBtnAdd(wxCommandEvent &event) {
+void MyPane::OnBtnAdd(wxCommandEvent &event) {
     AddRecordDialog *dlg = new AddRecordDialog();
     dlg->ShowModal();
 }
 
-void MyFrame::OnBtnDetails(wxCommandEvent &event) {
+void MyPane::OnBtnDetails(wxCommandEvent &event) {
     
 }
 
@@ -38,6 +37,8 @@ void AddRecordDialog::OnNumCtrl(wxKeyEvent &event) {
 }
 
 void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
+    mNumCtrl->Unbind(wxEVT_KEY_DOWN, &AddRecordDialog::OnNumCtrl, this);
+    
     time_t timev;
     time(&timev);
     std::string date = timeToDate(timev);
@@ -58,9 +59,9 @@ void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     
     // UI
     if (num > 0) {
-        wxGetApp().mView->mFrame->DrawRecordGained(date, record);
+        wxGetApp().mView->mPane->DrawRecordGained(date, record);
     } else {
-        wxGetApp().mView->mFrame->DrawNumSpent(-num);
+        wxGetApp().mView->mPane->DrawNumSpent(-num);
     }
     
     Close();
