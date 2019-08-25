@@ -45,11 +45,17 @@ void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     std::string name = mNameCtrl->GetValue().ToStdString();
     int num = stoi(mNumCtrl->GetValue().ToStdString());
     if (num > 1001 || num <= 0) {
-        wxMessageBox(_T("Please input a number between 1 and 1000"));
+        wxMessageDialog *dlg = new wxMessageDialog(NULL, _T("Please input a number between 1 and 1000"), _T("Invalid number of tokens"), wxOK | wxICON_ERROR);
+        dlg->ShowModal();
+        dlg->Destroy();
     }
     if (mRbTokType->GetSelection() == 1) {  // spent
-        if (num > wxGetApp().mView->mPane->mNumUnusedTokens) {
-            wxMessageBox(_T("You can't spend tokens that you haven't earned. Why not record some activities to earn tokens?"));
+        int diff = num - wxGetApp().mView->mPane->mNumUnusedTokens;
+        if (diff > 0) {
+            wxMessageDialog *dlg = new wxMessageDialog(NULL, wxString::Format(_T("You need to earn %d more tokens to spend on this activity."), diff), _T("Not enough tokens"), wxOK | wxICON_ERROR);
+            dlg->ShowModal();
+            dlg->Destroy();
+            return;
         }
         num = -num;
     }
