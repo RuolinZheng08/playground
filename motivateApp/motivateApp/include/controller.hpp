@@ -15,11 +15,10 @@
 
 class MyApp: public wxApp {
 public:
-    virtual bool OnInit();
-    
-private:
     MyModel *mModel;
     MyView *mView;
+    
+    virtual bool OnInit();
 };
 
 #endif /* controller_hpp */

@@ -27,7 +27,7 @@ AddRecordDialog::AddRecordDialog(): wxDialog(NULL, wxID_ANY, _T("Add New Record"
     
     // name text control
     wxStaticText *nameText = new wxStaticText(contentBox, wxID_ANY, _T("Name"));
-    nameCtrl = new wxTextCtrl(contentBox, wxID_ANY, _T(""));
+    nameCtrl = new wxTextCtrl(contentBox, wxID_ANY, _T(""), wxDefaultPosition, wxSize(250, -1));
     wxBoxSizer *nameSizer = new wxBoxSizer(wxHORIZONTAL);
     nameSizer->Add(nameText, 0, wxALL, SMALL_SPACING);
     nameSizer->Add(nameCtrl, 0, wxALL, SMALL_SPACING);
@@ -62,6 +62,10 @@ AddRecordDialog::AddRecordDialog(): wxDialog(NULL, wxID_ANY, _T("Add New Record"
     dialogSizer->Add(controlSizer, 1, wxALIGN_CENTER);
     
     SetSizer(dialogSizer);
+    
+    // bind to event handlers
+    numCtrl->Bind(wxEVT_KEY_DOWN, &AddRecordDialog::OnNumCtrl, this);
+    btnOk->Bind(wxEVT_BUTTON, &AddRecordDialog::OnBtnOk, this);
 }
 
 MyView::MyView() {

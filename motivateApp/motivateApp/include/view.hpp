@@ -18,8 +18,10 @@ const int MEDIUM_SPACING = 10;
 const int LARGE_SPACING = 15;
 const std::string TOKEN_GAINED = "☆";
 const std::string TOKEN_SPENT = "★";
-enum {
-    ID_TXT_CTRL_NUM = wxID_HIGHEST + 1
+
+// event ids
+enum EVT_IDS {
+    
 };
 
 class MyFrame: public wxFrame {
@@ -42,7 +44,9 @@ private:
     wxRadioBox *rbTokType;
     wxTextCtrl *numCtrl;
     
-    void OnBtnOk(wxCommandEvent &event);  // controller
+    // controller
+    void OnNumCtrl(wxKeyEvent &event);
+    void OnBtnOk(wxCommandEvent &event);
 };
 
 class MyView {
