@@ -9,9 +9,18 @@
 #include "view.hpp"
 
 MyPane::MyPane(wxWindow *parent): wxScrolledWindow(parent, wxID_ANY) {
+    mNumUnusedTokens = 0;
+    
     mPaneSizer = new wxBoxSizer(wxVERTICAL);
+    wxBoxSizer *topSizer = new wxBoxSizer(wxHORIZONTAL);
     wxButton *btnAdd = new wxButton(this, wxID_ANY, _T("Add New Record"));
-    mPaneSizer->Add(btnAdd, 0, wxALL, MEDIUM_SPACING);
+    mNumUnusedTxt = new wxStaticText(this, wxID_ANY, wxString::Format(_T("Number of unused tokens: %d"), mNumUnusedTokens));
+    
+    topSizer->Add(btnAdd, 0);
+    topSizer->AddSpacer(60);
+    topSizer->Add(mNumUnusedTxt, 0);
+    mPaneSizer->Add(topSizer, 0, wxALL, MEDIUM_SPACING);
+    
     SetSizer(mPaneSizer);
     FitInside();
     SetScrollRate(5, 5);
@@ -38,7 +47,12 @@ void MyPane::DrawRecordGained(std::string date, Record record) {
 }
 
 void MyPane::DrawNumSpent(unsigned int num) {
-    
+    for (int i = 0; i < num; i++) {
+        mUnusedTokens.pop_back();
+        mNumUnusedTokens--;
+        mUnusedTokens[i]->SetLabel(TOKEN_SPENT);
+    }
+    mNumUnusedTxt->SetLabel(wxString::Format(_T("Number of unused tokens: %d"), mNumUnusedTokens));
 }
 
 void MyPane::DrawDate(std::string date) {
@@ -59,7 +73,9 @@ void MyPane::DrawTokensGained(wxSizer *sizer, int numTok) {
         wxStaticText *tok = new wxStaticText(this, wxID_ANY, TOKEN_GAINED);
         sizer->Add(tok, 0, wxRIGHT, SMALL_SPACING);
         mUnusedTokens.push_back(tok);
+        mNumUnusedTokens++;
     }
+    mNumUnusedTxt->SetLabel(wxString::Format(_T("Number of unused tokens: %d"), mNumUnusedTokens));
 }
 
 AddRecordDialog::AddRecordDialog(): wxDialog(NULL, wxID_ANY, _T("Add New Record"), wxDefaultPosition, wxSize(400, 350)) {

@@ -31,11 +31,14 @@ enum EVT_IDS {
 class MyPane: public wxScrolledWindow {
 public:
     MyPane(wxWindow *parent);
+    int mNumUnusedTokens;  // len of mUnusedTokens
+    
     void DrawRecordGained(std::string date, Record record);
     void DrawNumSpent(unsigned int num);
     
 private:
     wxBoxSizer *mPaneSizer;
+    wxStaticText *mNumUnusedTxt;
     std::map<std::string, wxWrapSizer *> mDateSizerMap;
     // gained and not yet spent
     std::vector<wxStaticText *> mUnusedTokens;
