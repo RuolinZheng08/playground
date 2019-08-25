@@ -14,6 +14,9 @@
 		77A811FD23101B2900A5CFD9 /* view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A811FB23101B2900A5CFD9 /* view.cpp */; };
 		77A8120023101B3600A5CFD9 /* controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A811FE23101B3600A5CFD9 /* controller.cpp */; };
 		77A8120323101B9C00A5CFD9 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77A8120223101B9C00A5CFD9 /* util.cpp */; };
+		77C24DF0231270DB005205EF /* MyPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77C24DEE231270DB005205EF /* MyPane.cpp */; };
+		77C24DF3231270F3005205EF /* AddRecordDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77C24DF1231270F3005205EF /* AddRecordDialog.cpp */; };
+		77C24DF623127108005205EF /* DateDetailDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77C24DF423127108005205EF /* DateDetailDialog.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,12 @@
 		77A811FF23101B3600A5CFD9 /* controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = controller.hpp; sourceTree = "<group>"; };
 		77A8120123101B9500A5CFD9 /* util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = util.hpp; sourceTree = "<group>"; };
 		77A8120223101B9C00A5CFD9 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		77C24DEE231270DB005205EF /* MyPane.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyPane.cpp; sourceTree = "<group>"; };
+		77C24DEF231270DB005205EF /* MyPane.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MyPane.hpp; sourceTree = "<group>"; };
+		77C24DF1231270F3005205EF /* AddRecordDialog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AddRecordDialog.cpp; sourceTree = "<group>"; };
+		77C24DF2231270F3005205EF /* AddRecordDialog.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AddRecordDialog.hpp; sourceTree = "<group>"; };
+		77C24DF423127108005205EF /* DateDetailDialog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DateDetailDialog.cpp; sourceTree = "<group>"; };
+		77C24DF523127108005205EF /* DateDetailDialog.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DateDetailDialog.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,9 @@
 				77A811F823101B0C00A5CFD9 /* model.cpp */,
 				77A811FB23101B2900A5CFD9 /* view.cpp */,
 				77A811FE23101B3600A5CFD9 /* controller.cpp */,
+				77C24DEE231270DB005205EF /* MyPane.cpp */,
+				77C24DF1231270F3005205EF /* AddRecordDialog.cpp */,
+				77C24DF423127108005205EF /* DateDetailDialog.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -93,6 +105,9 @@
 				77A8120123101B9500A5CFD9 /* util.hpp */,
 				77A811F923101B0C00A5CFD9 /* model.hpp */,
 				77A811FC23101B2900A5CFD9 /* view.hpp */,
+				77C24DEF231270DB005205EF /* MyPane.hpp */,
+				77C24DF2231270F3005205EF /* AddRecordDialog.hpp */,
+				77C24DF523127108005205EF /* DateDetailDialog.hpp */,
 				77A811FF23101B3600A5CFD9 /* controller.hpp */,
 			);
 			path = include;
@@ -170,8 +185,11 @@
 				77A811FD23101B2900A5CFD9 /* view.cpp in Sources */,
 				77A8120023101B3600A5CFD9 /* controller.cpp in Sources */,
 				77A811E7231019C400A5CFD9 /* AppDelegate.m in Sources */,
+				77C24DF0231270DB005205EF /* MyPane.cpp in Sources */,
 				77A811FA23101B0C00A5CFD9 /* model.cpp in Sources */,
 				77A8120323101B9C00A5CFD9 /* util.cpp in Sources */,
+				77C24DF623127108005205EF /* DateDetailDialog.cpp in Sources */,
+				77C24DF3231270F3005205EF /* AddRecordDialog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

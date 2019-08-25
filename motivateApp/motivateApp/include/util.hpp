@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <wx/wx.h>
+#include <wx/wrapsizer.h>
 #include <string>
 #include <vector>
 #include <map>

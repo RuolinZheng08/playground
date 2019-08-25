@@ -25,6 +25,10 @@ void MyPane::OnBtnAdd(wxCommandEvent &event) {
 }
 
 void MyPane::OnBtnDetails(wxCommandEvent &event) {
+    std::map<int, std::string> btnIdMap = wxGetApp().mView->mPane->mBtnDetailsIdMap;
+    int btnId = event.GetId();
+    assert(btnIdMap.find(btnId) != btnIdMap.end());
+    std::string date = btnIdMap[btnId];
     
 }
 
@@ -70,6 +74,5 @@ void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     } else {
         wxGetApp().mView->mPane->DrawNumSpent(-num);
     }
-    
     Close();
 }
