@@ -11,6 +11,7 @@
 
 MyPane::MyPane(wxWindow *parent): wxScrolledWindow(parent, wxID_ANY) {
     mNumUnusedTokens = 0;
+    mOkayBtnId = wxID_HIGHEST;
     
     mPaneSizer = new wxBoxSizer(wxVERTICAL);
     wxBoxSizer *topSizer = new wxBoxSizer(wxHORIZONTAL);
@@ -60,8 +61,7 @@ void MyPane::DrawDate(std::string date) {
     wxBoxSizer *dateSizer = new wxBoxSizer(wxHORIZONTAL);
     wxStaticText *dateText = new wxStaticText(this, wxID_ANY, date);
     
-    int btnDetailsId = wxID_ANY;
-    wxButton *btnDetails = new wxButton(this, btnDetailsId, _T("Details"));
+    wxButton *btnDetails = new wxButton(this, mOkayBtnId, _T("Details"));
     
     dateSizer->Add(dateText, 0);
     dateSizer->AddSpacer(200);
@@ -69,8 +69,9 @@ void MyPane::DrawDate(std::string date) {
     mPaneSizer->Add(dateSizer, 0, wxALL, MEDIUM_SPACING);
     
     btnDetails->Bind(wxEVT_BUTTON, &MyPane::OnBtnDetails, this);
-    assert(mBtnDetailsIdMap.find(btnDetailsId) == mBtnDetailsIdMap.end());
-    mBtnDetailsIdMap[btnDetailsId] = date;
+    assert(mBtnDetailsIdMap.find(mOkayBtnId) == mBtnDetailsIdMap.end());
+    mBtnDetailsIdMap[mOkayBtnId] = date;
+    mOkayBtnId++;
 }
 
 void MyPane::DrawTokensGained(wxSizer *sizer, int numTok) {

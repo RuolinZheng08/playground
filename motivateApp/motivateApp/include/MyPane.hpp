@@ -27,6 +27,7 @@ private:
     std::map<std::string, wxWrapSizer *> mDateSizerMap;
     // gained and not yet spent
     std::vector<wxStaticText *> mUnusedTokens;
+    int mOkayBtnId;
     
     void DrawDate(std::string date);
     void DrawTokensGained(wxSizer *sizer, int numTok);

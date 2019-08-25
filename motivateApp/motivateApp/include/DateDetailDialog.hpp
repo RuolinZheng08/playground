@@ -12,4 +12,9 @@
 #include <stdio.h>
 #include "util.hpp"
 
+class DateDetailDialog: public wxDialog {
+public:
+    DateDetailDialog(std::string date, std::vector<Record> records);
+};
+
 #endif /* DateDetailDialog_hpp */

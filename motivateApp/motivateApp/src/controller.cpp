@@ -29,7 +29,9 @@ void MyPane::OnBtnDetails(wxCommandEvent &event) {
     int btnId = event.GetId();
     assert(btnIdMap.find(btnId) != btnIdMap.end());
     std::string date = btnIdMap[btnId];
-    
+    std::map<std::string, std::vector<Record>> recordMap = wxGetApp().mModel->mRecordMap;
+    DateDetailDialog *dlg = new DateDetailDialog(date, recordMap[date]);
+    dlg->ShowModal();
 }
 
 void AddRecordDialog::OnNumCtrl(wxKeyEvent &event) {
@@ -80,5 +82,5 @@ void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     } else {
         wxGetApp().mView->mPane->DrawNumSpent(-num);
     }
-g    Close();
+    Close();
 }

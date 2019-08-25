@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "motivateApp/src/controller.cpp"
-            timestampString = "588414598.686177"
+            timestampString = "588417224.37749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "AddRecordDialog::OnBtnOk(wxCommandEvent &amp;event)"
             landmarkType = "7">
          </BreakpointContent>

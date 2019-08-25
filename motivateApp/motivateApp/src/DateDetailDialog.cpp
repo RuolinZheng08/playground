@@ -8,3 +8,18 @@
 
 #include "view.hpp"
 #include "DateDetailDialog.hpp"
+
+DateDetailDialog::DateDetailDialog(std::string date, std::vector<Record> records): wxDialog(NULL, wxID_ANY, date, wxPoint(800, 800), wxSize(400, 350)) {
+    wxBoxSizer *dialogSizer = new wxBoxSizer(wxVERTICAL);
+    dialogSizer->AddSpacer(MEDIUM_SPACING);  // top spacing
+    for (int i = 0; i < records.size(); i++) {
+        wxBoxSizer *recordSizer = new wxBoxSizer(wxHORIZONTAL);
+        std::string tok = records[i].mNumTok > 0 ? TOKEN_GAINED : TOKEN_SPENT;
+        recordSizer->Add(new wxStaticText(this, wxID_ANY, records[i].mName));
+        recordSizer->AddSpacer(100);
+        recordSizer->Add(new wxStaticText(this, wxID_ANY, wxString::Format(_T("%s %d"), tok, std::abs(records[i].mNumTok))));
+        dialogSizer->Add(recordSizer, 0, wxLEFT, MEDIUM_SPACING);
+        dialogSizer->AddSpacer(SMALL_SPACING);
+    }
+    SetSizer(dialogSizer);
+}
