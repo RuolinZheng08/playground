@@ -9,18 +9,43 @@
 #include "model.hpp"
 
 MyModel::MyModel() {
-    char buffer[256];
-    strcpy(buffer, getenv("HOME"));
-    strcat(buffer, "/Documents/data.csv");
+    std::string path = getCachePath();
     std::ifstream in;
-//    outfile.open(buffer);
-//
-//    //Creates an empty file for writing
-//    FILE *f = fopen(buffer,"w");
-//
-//    //Writing something
-//    fprintf(f, "%s %s %d", "Hello", "World", 2016);
-//
-//    //Closing the file
-//    fclose(f);
+    in.open(path);
+    if (!in) {
+        // create file
+        std::ofstream out;
+        out.open(path);
+        out << CSV_HEADER;
+        out.close();
+    } else {
+        // read into mRecordMap
+        std::string str;
+        const char *delim = ",";
+        char *tok;
+        while (std::getline(in, str)) {
+            // parse time,name,numTok
+            tok = strtok(const_cast<char*>(str.c_str()), delim);
+            time_t seconds = atol(tok);
+            tok = strtok(NULL, delim);
+            std::string name = std::string(tok);
+            tok = strtok(NULL, delim);
+            int numTok = atoi(tok);
+            
+            // construct Record
+            std::string time = timeToDate(seconds);
+            Record record = Record(seconds, name, numTok);
+            mRecordMap[time].push_back(record);
+        }
+        in.close();
+    }
+}
+
+void MyModel::addRecord(std::string date, Record record) {
+    std::ofstream out;
+    std::string path = getCachePath();
+    out.open(path);
+    mRecordMap[date].push_back(record);
+    out << record.mTime << "," << record.mName << "," << record.mNumTok << "\n";
+    out.close();
 }

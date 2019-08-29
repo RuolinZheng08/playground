@@ -14,3 +14,12 @@ std::string timeToDate(time_t seconds) {
     strftime(date, sizeof(date), "%Y-%m-%d", tm);
     return std::string(date);
 }
+
+std::string getCachePath() {
+    char buffer[256];
+    // FIXME?
+    //strcpy(buffer, getenv("HOME"));
+    //strcat(buffer, "motivateCache.csv");
+    strcpy(buffer, "motivateCache.csv");
+    return std::string(buffer);
+}

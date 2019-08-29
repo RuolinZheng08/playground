@@ -24,6 +24,8 @@ const std::string TOKEN_SPENT = "★";
 
 std::string timeToDate(time_t seconds);
 
+std::string getCachePath();
+
 class Record {
 public:
     time_t mTime;  // unix seconds

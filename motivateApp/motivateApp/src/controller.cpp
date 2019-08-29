@@ -16,6 +16,13 @@ bool MyApp::OnInit() {
     
     // view
     mView = new MyView();
+    std::map<std::string, std::vector<Record>>::iterator it;
+    for (it = mModel->mRecordMap.begin(); it != mModel->mRecordMap.end(); it++) {
+        std::vector<Record> records = it->second;
+        for (int i = 0; i != records.size(); i++) {
+           // DrawRecordGained
+        }
+    }
     return true;
 }
 
@@ -80,7 +87,7 @@ void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     
     // logic
     Record record = Record(timev, name, num);
-    wxGetApp().mModel->mRecordMap[date].push_back(record);
+    wxGetApp().mModel->addRecord(date, record);
     
     // UI
     if (num > 0) {

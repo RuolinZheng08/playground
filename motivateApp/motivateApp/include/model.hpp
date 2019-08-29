@@ -15,11 +15,14 @@
 #include <fstream>
 #include "util.hpp"
 
+const std::string CSV_HEADER = "time,name,numTok\n";
+
 class MyModel {
 public:
     std::map<std::string, std::vector<Record>> mRecordMap;
     
     MyModel();  // load from data.csv into mRecordMap if file exists
+    void addRecord(std::string date, Record record);  // insert into mRecordMap and write to data.csv
 };
 
 #endif /* model_hpp */
