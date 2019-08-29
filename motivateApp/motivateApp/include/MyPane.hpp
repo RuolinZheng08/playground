@@ -14,10 +14,11 @@
 
 class MyPane: public wxScrolledWindow {
 public:
-    MyPane(wxWindow *parent);
     int mNumUnusedTokens;  // len of mUnusedTokens
     std::map<int, std::string> mBtnDetailsIdMap;  // button id to date
     
+    MyPane(wxWindow *parent);
+    void OnClose(wxCloseEvent &event);
     void DrawRecordGained(std::string date, Record record);
     void DrawNumSpent(unsigned int num);
     

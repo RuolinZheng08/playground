@@ -19,6 +19,11 @@ bool MyApp::OnInit() {
     return true;
 }
 
+void MyPane::OnClose(wxCloseEvent &event) {
+    Destroy();
+    wxGetApp().ExitMainLoop();
+}
+
 void MyPane::OnBtnAdd(wxCommandEvent &event) {
     AddRecordDialog *dlg = new AddRecordDialog();
     dlg->ShowModal();
@@ -52,6 +57,7 @@ void AddRecordDialog::OnBtnOk(wxCommandEvent &event) {
     std::string numStr = mNumCtrl->GetValue().ToStdString();
     if (name == "" || numStr == "") {
         event.Skip();
+        EndModal(0);
         return;
     }
     

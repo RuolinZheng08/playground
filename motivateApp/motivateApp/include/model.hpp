@@ -17,9 +17,9 @@
 
 class MyModel {
 public:
-    MyModel();  // load from data.csv into mRecordMap if file exists
-    
     std::map<std::string, std::vector<Record>> mRecordMap;
+    
+    MyModel();  // load from data.csv into mRecordMap if file exists
 };
 
 #endif /* model_hpp */
