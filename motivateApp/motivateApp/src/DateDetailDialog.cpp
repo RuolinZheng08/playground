@@ -6,7 +6,6 @@
 //  Copyright © 2019 Ruolin Zheng. All rights reserved.
 //
 
-#include "view.hpp"
 #include "DateDetailDialog.hpp"
 
 DateDetailDialog::DateDetailDialog(std::string date, std::vector<Record> records): wxDialog(NULL, wxID_ANY, date, wxPoint(800, 800), wxSize(400, 350)) {

@@ -6,7 +6,6 @@
 //  Copyright © 2019 Ruolin Zheng. All rights reserved.
 //
 
-#include "view.hpp"
 #include "MyPane.hpp"
 
 MyPane::MyPane(wxWindow *parent): wxScrolledWindow(parent, wxID_ANY) {

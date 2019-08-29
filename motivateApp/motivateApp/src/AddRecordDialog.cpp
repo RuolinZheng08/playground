@@ -6,7 +6,6 @@
 //  Copyright © 2019 Ruolin Zheng. All rights reserved.
 //
 
-#include "view.hpp"
 #include "AddRecordDialog.hpp"
 
 AddRecordDialog::AddRecordDialog(): wxDialog(NULL, wxID_ANY, _T("Add New Record"), wxDefaultPosition, wxSize(400, 350)) {

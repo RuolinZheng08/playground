@@ -18,12 +18,6 @@
 #include "AddRecordDialog.hpp"
 #include "DateDetailDialog.hpp"
 
-const int SMALL_SPACING = 5;
-const int MEDIUM_SPACING = 15;
-const int LARGE_SPACING = 30;
-const std::string TOKEN_GAINED = "☆";
-const std::string TOKEN_SPENT = "★";
-
 class MyView {
 public:
     MyPane *mPane;

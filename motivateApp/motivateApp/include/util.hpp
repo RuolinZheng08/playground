@@ -16,6 +16,12 @@
 #include <vector>
 #include <map>
 
+const int SMALL_SPACING = 5;
+const int MEDIUM_SPACING = 15;
+const int LARGE_SPACING = 30;
+const std::string TOKEN_GAINED = "☆";
+const std::string TOKEN_SPENT = "★";
+
 std::string timeToDate(time_t seconds);
 
 class Record {

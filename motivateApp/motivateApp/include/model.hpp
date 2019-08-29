@@ -12,11 +12,12 @@
 #include <stdio.h>
 #include <vector>
 #include <map>
+#include <fstream>
 #include "util.hpp"
 
 class MyModel {
 public:
-    MyModel();
+    MyModel();  // load from data.csv into mRecordMap if file exists
     
     std::map<std::string, std::vector<Record>> mRecordMap;
 };
