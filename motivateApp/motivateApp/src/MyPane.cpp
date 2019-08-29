@@ -49,9 +49,9 @@ void MyPane::DrawRecordGained(std::string date, Record record) {
 
 void MyPane::DrawNumSpent(unsigned int num) {
     for (int i = 0; i < num; i++) {
-        mUnusedTokens.pop_back();
+        mUnusedTokens.front()->SetLabel(TOKEN_SPENT);
+        mUnusedTokens.pop_front();
         mNumUnusedTokens--;
-        mUnusedTokens[i]->SetLabel(TOKEN_SPENT);
     }
     mNumUnusedTxt->SetLabel(wxString::Format(_T("Number of unused tokens: %d"), mNumUnusedTokens));
 }

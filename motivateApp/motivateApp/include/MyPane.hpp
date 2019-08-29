@@ -10,6 +10,7 @@
 #define MyPane_hpp
 
 #include <stdio.h>
+#include <list>
 #include "util.hpp"
 
 class MyPane: public wxScrolledWindow {
@@ -27,7 +28,7 @@ private:
     wxStaticText *mNumUnusedTxt;
     std::map<std::string, wxWrapSizer *> mDateSizerMap;
     // gained and not yet spent
-    std::vector<wxStaticText *> mUnusedTokens;
+    std::list<wxStaticText *> mUnusedTokens;
     int mOkayBtnId;
     
     void DrawDate(std::string date);
