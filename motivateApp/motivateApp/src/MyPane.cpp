@@ -29,6 +29,31 @@ MyPane::MyPane(wxWindow *parent): wxScrolledWindow(parent, wxID_ANY) {
     btnAdd->Bind(wxEVT_BUTTON, &MyPane::OnBtnAdd, this);
 }
 
+void MyPane::DrawRecordMap(std::map<std::string, std::vector<Record>> recordMap) {
+    int numUsed = 0;
+    std::map<std::string, std::vector<Record>>::iterator it;
+    for (it =recordMap.begin(); it != recordMap.end(); it++) {
+        std::string date = it->first;
+        DrawDate(date);
+        wxWrapSizer *tokenSizer = new wxWrapSizer(wxHORIZONTAL);
+        mPaneSizer->Add(tokenSizer, 0, wxLEFT | wxRIGHT, MEDIUM_SPACING);
+        mDateSizerMap[date] = tokenSizer;
+        
+        std::vector<Record> records = it->second;
+        for (int i = 0; i != records.size(); i++) {
+            if (records[i].mNumTok < 0) {
+                numUsed += i;
+            } else {
+                // draw tokens
+                DrawTokensGained(mDateSizerMap[date], records[i].mNumTok);
+            }
+        }
+    }
+    DrawNumSpent(numUsed);
+    FitInside();
+    mPaneSizer->Layout();
+}
+
 void MyPane::DrawRecordGained(std::string date, Record record) {
     wxWrapSizer *tokenSizer;
     if (mDateSizerMap.find(date) == mDateSizerMap.end()) {

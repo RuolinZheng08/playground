@@ -16,19 +16,14 @@ bool MyApp::OnInit() {
     
     // view
     mView = new MyView();
-    std::map<std::string, std::vector<Record>>::iterator it;
-    for (it = mModel->mRecordMap.begin(); it != mModel->mRecordMap.end(); it++) {
-        std::vector<Record> records = it->second;
-        for (int i = 0; i != records.size(); i++) {
-           // DrawRecordGained
-        }
-    }
+    // draw cached records
+    mView->mPane->DrawRecordMap(mModel->mRecordMap);
     return true;
 }
 
 void MyPane::OnClose(wxCloseEvent &event) {
-    Destroy();
     wxGetApp().ExitMainLoop();
+    Close();
 }
 
 void MyPane::OnBtnAdd(wxCommandEvent &event) {

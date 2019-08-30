@@ -20,6 +20,8 @@ public:
     
     MyPane(wxWindow *parent);
     void OnClose(wxCloseEvent &event);
+    
+    void DrawRecordMap(std::map<std::string, std::vector<Record>> recordMap);
     void DrawRecordGained(std::string date, Record record);
     void DrawNumSpent(unsigned int num);
     
@@ -31,6 +33,7 @@ private:
     std::list<wxStaticText *> mUnusedTokens;
     int mOkayBtnId;
     
+    // draw helpers
     void DrawDate(std::string date);
     void DrawTokensGained(wxSizer *sizer, int numTok);
     

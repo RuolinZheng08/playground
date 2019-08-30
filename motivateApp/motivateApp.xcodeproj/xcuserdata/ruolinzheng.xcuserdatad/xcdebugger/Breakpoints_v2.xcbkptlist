@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "motivateApp/src/model.cpp"
-            timestampString = "588785737.6601"
+            filePath = "motivateApp/src/MyPane.cpp"
+            timestampString = "588865852.209746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "MyModel::MyModel()"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "MyPane::DrawRecordMap(std::map&lt;std::string, std::vector&lt;Record&gt;&gt; recordMap)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
