@@ -21,7 +21,6 @@ private:
     wxRadioBox *mRbTokType;
     wxTextCtrl *mNumCtrl;
     
-    void OnClose(wxCloseEvent &event);
     // controller
     void OnNumCtrl(wxKeyEvent &event);
     void OnBtnOk(wxCommandEvent &event);
