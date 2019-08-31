@@ -17,9 +17,9 @@ std::string timeToDate(time_t seconds) {
 
 std::string getCachePath() {
     char buffer[256];
-    // FIXME?
-    strcpy(buffer, getenv("HOME"));
-    strcat(buffer, "motivateCache.csv");
-//    strcpy(buffer, "motivateCache.csv");
+    // FIXME: app data path?
+//    strcpy(buffer, getenv("HOME"));
+//    strcat(buffer, "motivateCache.csv");
+    strcpy(buffer, "motivateCache.csv");
     return std::string(buffer);
 }

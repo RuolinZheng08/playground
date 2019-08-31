@@ -19,7 +19,6 @@ public:
     std::map<int, std::string> mBtnDetailsIdMap;  // button id to date
     
     MyPane(wxWindow *parent);
-//    void OnClose(wxCloseEvent &event);
     
     void DrawRecordMap(std::map<std::string, std::vector<Record>> recordMap);
     void DrawRecordGained(std::string date, Record record);
