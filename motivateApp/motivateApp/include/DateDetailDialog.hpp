@@ -14,7 +14,7 @@
 
 class DateDetailDialog: public wxDialog {
 public:
-    DateDetailDialog(std::string date, std::vector<Record> records);
+    DateDetailDialog(wxWindow *parent, std::string date, std::vector<Record> records);
 };
 
 #endif /* DateDetailDialog_hpp */

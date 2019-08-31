@@ -21,13 +21,8 @@ bool MyApp::OnInit() {
     return true;
 }
 
-void MyPane::OnClose(wxCloseEvent &event) {
-    wxGetApp().ExitMainLoop();
-    Close();
-}
-
 void MyPane::OnBtnAdd(wxCommandEvent &event) {
-    AddRecordDialog *dlg = new AddRecordDialog();
+    AddRecordDialog *dlg = new AddRecordDialog(this);
     dlg->ShowModal();
 }
 
@@ -37,7 +32,7 @@ void MyPane::OnBtnDetails(wxCommandEvent &event) {
     assert(btnIdMap.find(btnId) != btnIdMap.end());
     std::string date = btnIdMap[btnId];
     std::map<std::string, std::vector<Record>> recordMap = wxGetApp().mModel->mRecordMap;
-    DateDetailDialog *dlg = new DateDetailDialog(date, recordMap[date]);
+    DateDetailDialog *dlg = new DateDetailDialog(this, date, recordMap[date]);
     dlg->ShowModal();
 }
 

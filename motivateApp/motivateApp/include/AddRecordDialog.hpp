@@ -14,13 +14,14 @@
 
 class AddRecordDialog: public wxDialog {
 public:
-    AddRecordDialog();
+    AddRecordDialog(wxWindow *parent);
     
 private:
     wxTextCtrl *mNameCtrl;
     wxRadioBox *mRbTokType;
     wxTextCtrl *mNumCtrl;
     
+    void OnClose(wxCloseEvent &event);
     // controller
     void OnNumCtrl(wxKeyEvent &event);
     void OnBtnOk(wxCommandEvent &event);

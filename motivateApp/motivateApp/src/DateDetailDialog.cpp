@@ -8,7 +8,7 @@
 
 #include "DateDetailDialog.hpp"
 
-DateDetailDialog::DateDetailDialog(std::string date, std::vector<Record> records): wxDialog(NULL, wxID_ANY, date, wxPoint(800, 800), wxSize(400, 350)) {
+DateDetailDialog::DateDetailDialog(wxWindow *parent, std::string date, std::vector<Record> records): wxDialog(parent, wxID_ANY, date, wxPoint(800, 800), wxSize(400, 350)) {
     wxBoxSizer *dialogSizer = new wxBoxSizer(wxVERTICAL);
     dialogSizer->AddSpacer(MEDIUM_SPACING);  // top spacing
     for (int i = 0; i < records.size(); i++) {

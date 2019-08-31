@@ -8,7 +8,7 @@
 
 #include "AddRecordDialog.hpp"
 
-AddRecordDialog::AddRecordDialog(): wxDialog(NULL, wxID_ANY, _T("Add New Record"), wxDefaultPosition, wxSize(400, 350)) {
+AddRecordDialog::AddRecordDialog(wxWindow *parent): wxDialog(parent, wxID_ANY, _T("Add New Record"), wxDefaultPosition, wxSize(400, 350)) {
     
     wxBoxSizer *dialogSizer = new wxBoxSizer(wxVERTICAL);
     wxBoxSizer *contentSizer = new wxBoxSizer(wxVERTICAL);
@@ -57,4 +57,10 @@ AddRecordDialog::AddRecordDialog(): wxDialog(NULL, wxID_ANY, _T("Add New Record"
     // bind to event handlers
     mNumCtrl->Bind(wxEVT_KEY_DOWN, &AddRecordDialog::OnNumCtrl, this);
     btnOk->Bind(wxEVT_BUTTON, &AddRecordDialog::OnBtnOk, this);
+}
+
+void AddRecordDialog::OnClose(wxCloseEvent &event) {
+    mNameCtrl->Enable(false);
+    mNumCtrl->Enable(false);
+    Close();
 }
