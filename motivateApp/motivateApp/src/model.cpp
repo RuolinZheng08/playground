@@ -9,14 +9,12 @@
 #include "model.hpp"
 
 MyModel::MyModel() {
-    std::string path = getCachePath();
     std::ifstream in;
-    in.open(path);
+    in.open(PATH);
     if (!in) {
         // create file
         std::ofstream out;
-        out.open(path);
-        out << CSV_HEADER;
+        out.open(PATH);
         out.close();
     } else {
         // read into mRecordMap
@@ -43,8 +41,7 @@ MyModel::MyModel() {
 
 void MyModel::addRecord(std::string date, Record record) {
     std::ofstream out;
-    std::string path = getCachePath();
-    out.open(path);
+    out.open(PATH, std::ios_base::app);
     mRecordMap[date].push_back(record);
     out << record.mTime << "," << record.mName << "," << record.mNumTok << "\n";
     out.close();

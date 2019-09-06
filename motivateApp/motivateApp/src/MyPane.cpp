@@ -42,7 +42,7 @@ void MyPane::DrawRecordMap(std::map<std::string, std::vector<Record>> recordMap)
         std::vector<Record> records = it->second;
         for (int i = 0; i != records.size(); i++) {
             if (records[i].mNumTok < 0) {
-                numUsed += i;
+                numUsed += -records[i].mNumTok;
             } else {
                 // draw tokens
                 DrawTokensGained(mDateSizerMap[date], records[i].mNumTok);

@@ -9,14 +9,106 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "motivateApp/src/MyPane.cpp"
-            timestampString = "588865852.209746"
+            filePath = "motivateApp/src/model.cpp"
+            timestampString = "589465258.285973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "MyPane::DrawRecordMap(std::map&lt;std::string, std::vector&lt;Record&gt;&gt; recordMap)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "MyModel::MyModel()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyModel::MyModel()"
+                  moduleName = "motivateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruolinzheng/Desktop/Repositories/playground/motivateApp/motivateApp/src/model.cpp"
+                  timestampString = "589465028.185416"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyModel::MyModel()"
+                  moduleName = "motivateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruolinzheng/Desktop/Repositories/playground/motivateApp/motivateApp/src/model.cpp"
+                  timestampString = "589465028.189544"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyModel::MyModel()"
+                  moduleName = "motivateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruolinzheng/Desktop/Repositories/playground/motivateApp/motivateApp/src/model.cpp"
+                  timestampString = "589465028.192317"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "872">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyModel::MyModel()"
+                  moduleName = "motivateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruolinzheng/Desktop/Repositories/playground/motivateApp/motivateApp/src/model.cpp"
+                  timestampString = "589465028.195539"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "892">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyModel::MyModel()"
+                  moduleName = "motivateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruolinzheng/Desktop/Repositories/playground/motivateApp/motivateApp/src/model.cpp"
+                  timestampString = "589465028.198311"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1071">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyModel::MyModel()"
+                  moduleName = "motivateApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruolinzheng/Desktop/Repositories/playground/motivateApp/motivateApp/src/model.cpp"
+                  timestampString = "589465028.201268"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "21">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

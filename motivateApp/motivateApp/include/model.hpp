@@ -15,7 +15,7 @@
 #include <fstream>
 #include "util.hpp"
 
-const std::string CSV_HEADER = "time,name,numTok\n";
+const std::string PATH = "motivateCache.csv";
 
 class MyModel {
 public:
